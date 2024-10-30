@@ -26,13 +26,10 @@
             android:name=".profileActivity"
             android:exported="false" />
         <activity
-            android:name=".homeActivity"
-            android:exported="false" />
-        <activity
             android:name=".creditsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".homeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
