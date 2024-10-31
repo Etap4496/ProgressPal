@@ -5,13 +5,101 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B3E5FC"
     tools:context=".homeActivity">
 
+    <ScrollView
+        android:id="@+id/tasks_scroll_view"
+        android:layout_width="405dp"
+        android:layout_height="420dp"
+        android:background="#B3E5FC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/tasks_root_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/new_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:text="@string/new_task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="340dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
+        app:layout_constraintVertical_bias="0.913">
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="home"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/points_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="point"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/profile_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="profile"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/credits_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="credits"
+            android:textSize="10sp" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="192dp"
-        android:layout_height="137dp"
-        android:text="Home "
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="274dp" />
+        android:id="@+id/mascot_quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        tools:text="@string/mascot_quote"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
+        app:layout_constraintVertical_bias="0.366" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
