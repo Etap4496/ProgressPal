@@ -7,4 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".creditsActivity">
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="340dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981">
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="home"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/points_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="point"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/profile_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="profile"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/credits_button"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:text="credits"
+            android:textSize="10sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
