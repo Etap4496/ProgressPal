@@ -94,12 +94,12 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:backgroundTint="@color/white"
-        tools:text="@string/mascot_quote"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintVertical_bias="0.366"
+        tools:text="@string/mascot_quote" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
