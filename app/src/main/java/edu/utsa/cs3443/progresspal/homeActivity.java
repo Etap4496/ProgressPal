@@ -1,12 +1,11 @@
 package edu.utsa.cs3443.progresspal;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class homeActivity extends AppCompatActivity {
 
@@ -14,5 +13,47 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Button profileButton = findViewById(R.id.profile_button);
+        Button pointButton = findViewById(R.id.points_button);
+        Button creditButton = findViewById(R.id.credits_button);
+        Button homeButton = findViewById(R.id.home_button);
+
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchProfile();
+            }
+        });
+
+        pointButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchPoint();
+            }
+        });
+
+        creditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchCredit();
+            }
+        });
+
     }
+
+    private void launchProfile(){
+        Intent intentProfile = new Intent(this, profileActivity.class);
+        startActivity(intentProfile);
+    }
+    private void launchPoint(){
+        Intent intentPoint = new Intent(this, pointsActivity.class);
+        startActivity(intentPoint);
+    }
+    private void launchCredit(){
+        Intent intentCredit = new Intent(this, creditsActivity.class);
+        startActivity(intentCredit);
+    }
+
 }
