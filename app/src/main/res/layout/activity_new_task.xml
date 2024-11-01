@@ -43,7 +43,7 @@
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:text="@string/task_name"
+            android:hint="Enter Task Name"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -58,7 +58,7 @@
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:text="@string/enter_due_date"
+            android:hint="Enter Due Date (MM/DD/YY)"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -73,7 +73,7 @@
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:text="@string/enter_time"
+            android:hint="Enter Time (hr)"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
