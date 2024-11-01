@@ -26,7 +26,7 @@ public class pointsActivity extends AppCompatActivity {
             }
         });
 
-        pointButton.setOnClickListener(new View.OnClickListener() {
+        profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchProfile();
@@ -49,7 +49,6 @@ public class pointsActivity extends AppCompatActivity {
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
     }
-
     private void launchHome(){
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);

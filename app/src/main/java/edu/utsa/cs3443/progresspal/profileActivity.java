@@ -54,7 +54,6 @@ public class profileActivity extends AppCompatActivity {
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
     }
-
     private void launchHome(){
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);
