@@ -18,6 +18,7 @@ public class homeActivity extends AppCompatActivity {
         Button pointButton = findViewById(R.id.points_button);
         Button creditButton = findViewById(R.id.credits_button);
         Button homeButton = findViewById(R.id.home_button);
+        Button newTaskButton = findViewById(R.id.new_task);
 
 
         profileButton.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,13 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+        newTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNewTask();
+            }
+        });
+
     }
 
     private void launchProfile(){
@@ -54,6 +62,10 @@ public class homeActivity extends AppCompatActivity {
     private void launchCredit(){
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
+    }
+    private void launchNewTask(){
+        Intent intentTask = new Intent(this, newTaskActivity.class);
+        startActivity(intentTask);
     }
 
 }
