@@ -100,7 +100,22 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.334"
+        app:layout_constraintVertical_bias="0.241"
         tools:text="@string/mascot_quote" />
+
+    <ImageButton
+        android:id="@+id/mascot_quote_button"
+        android:layout_width="99dp"
+        android:layout_height="92dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
+        app:layout_constraintVertical_bias="0.442"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:visibility="visible" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
