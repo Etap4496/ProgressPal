@@ -7,27 +7,26 @@
     android:layout_height="match_parent"
     android:background="@color/light_primary"
     android:backgroundTint="#D7F1F4"
+    android:paddingVertical="20dp"
     tools:context=".newTaskActivity">
 
     <LinearLayout
         android:id="@+id/new_task_LL"
-        android:layout_width="375dp"
-        android:layout_height="874dp"
+        android:layout_width="408dp"
+        android:layout_height="878dp"
         android:background="@color/light_primary"
         android:backgroundTint="@color/light_primary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/new_task_header"
+            android:id="@+id/newTask_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:paddingBottom="25dp"
+            android:paddingVertical="40dp"
             android:text="@string/new_task"
             android:textAlignment="center"
             android:textSize="34sp"
@@ -38,12 +37,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Enter Task Name"
             android:inputType="text"
             android:paddingLeft="15dp"
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:hint="Enter Task Name"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -53,12 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Enter Due Date (MM/DD/YY)"
             android:inputType="text"
             android:paddingLeft="15dp"
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:hint="Enter Due Date (MM/DD/YY)"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -68,12 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
+            android:hint="Enter Time (hr)"
+            android:inputType="number"
             android:paddingLeft="15dp"
             android:paddingTop="25dp"
             android:paddingRight="15dp"
             android:paddingBottom="25dp"
-            android:hint="Enter Time (hr)"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -84,7 +83,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
-            android:paddingTop="450dp"
+            android:paddingTop="385dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
@@ -104,10 +103,12 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/primary_color"
+                android:paddingBottom="6dp"
                 android:text="@string/create_button"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
