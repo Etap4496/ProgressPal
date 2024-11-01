@@ -15,5 +15,6 @@
     <string name="enter_time">Enter Time (hr)</string>
     <string name="cancel_button">Cancel</string>
     <string name="create_button">Create</string>
+    <string name="change_name">Change Mascot Name</string>
 
 </resources>
