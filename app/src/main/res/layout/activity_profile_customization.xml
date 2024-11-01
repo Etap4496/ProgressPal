@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_primary"
-    android:backgroundTint="@color/light_primary"
+    android:backgroundTint="#D7F1F4"
     tools:context=".profileCustomizationActivity">
 
     <TextView

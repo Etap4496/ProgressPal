@@ -84,25 +84,29 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
-            android:paddingTop="470dp"
+            android:paddingTop="450dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
             <Button
                 android:id="@+id/cancel_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/primary_color"
-                android:text="@string/cancel_button" />
+                android:text="@string/cancel_button"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/create_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/primary_color"
-                android:text="@string/create_button" />
+                android:text="@string/create_button"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>
