@@ -17,4 +17,11 @@
     <string name="create_button">Create</string>
     <string name="change_name">Change Mascot Name</string>
 
+    <string-array name="mascot_colors">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Pink</item>
+    </string-array>
+
 </resources>
