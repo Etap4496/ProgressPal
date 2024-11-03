@@ -16,6 +16,8 @@
     <string name="cancel_button">Cancel</string>
     <string name="create_button">Create</string>
     <string name="change_name">Change Mascot Name</string>
+    <string name="hat_selections">Hats</string>
+    <string name="staff_selections">Staffs</string>
 
     <string-array name="mascot_colors">
         <item>Red</item>
