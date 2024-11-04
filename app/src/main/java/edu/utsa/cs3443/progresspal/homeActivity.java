@@ -19,6 +19,7 @@ public class homeActivity extends AppCompatActivity {
 
     private QuoteHandler quoteHandler;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
