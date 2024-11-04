@@ -16,8 +16,8 @@ public class TaskTracker {
 
     }
 
-    private void addTasks(){
-
+    private void addTasks(Task task){
+        tasks.add(task);
     }
 
     private void createTask(){

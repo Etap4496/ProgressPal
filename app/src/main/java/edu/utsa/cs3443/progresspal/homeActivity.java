@@ -24,6 +24,7 @@ public class homeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //initializes the ArrayList of mascot quotes and loads them from the text file
         initQuotes();
 
         Button profileButton = findViewById(R.id.profile_button);
