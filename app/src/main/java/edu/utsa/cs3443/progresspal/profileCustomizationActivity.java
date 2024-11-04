@@ -30,8 +30,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageButton greenBlueHatButton = findViewById(R.id.green_blue_hat);
         ImageButton purpleHatButton = findViewById(R.id.purple_hat);
         ImageButton blueHaButton = findViewById(R.id.blue_hat);
-
-        ImageButton greenStaffButton = findViewById(R.id.green_staff);
+        ImageButton greenStaffButton  = findViewById(R.id.green_staff);
         ImageButton redStaffButton = findViewById(R.id.red_staff);
         ImageButton purpleStaffButton = findViewById(R.id.purple_staff);
 

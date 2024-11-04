@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +15,13 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.progresspal.model.QuoteHandler;
+import edu.utsa.cs3443.progresspal.model.Task;
+import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 public class homeActivity extends AppCompatActivity {
 
     private QuoteHandler quoteHandler;
-
+    private static TaskTracker taskTracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,8 +87,13 @@ public class homeActivity extends AppCompatActivity {
         quoteHandler.loadQuotes(this);
     }
 
-    private void newTaskDynamicSetup(){
+    //not done yet- marc
+    private void newTaskDynamicSetup(ArrayList<Task> tasks){
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.tasks_root_LL);
 
+        for(Task task : tasks){
+            Button myButton = new Button(this);
+        }
     }
 
     private void launchProfile(){

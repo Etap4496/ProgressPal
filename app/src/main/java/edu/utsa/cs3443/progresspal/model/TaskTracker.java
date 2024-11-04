@@ -13,7 +13,6 @@ public class TaskTracker {
     }
 
     private void loadTasks(Activity activity){
-
     }
 
     private void addTasks(Task task){

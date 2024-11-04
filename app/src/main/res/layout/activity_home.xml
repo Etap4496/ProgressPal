@@ -50,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.913">
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/home_button"
@@ -106,14 +106,17 @@
 
     <ImageButton
         android:id="@+id/mascot_quote_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="138dp"
+        android:layout_height="122dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/background_color"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
+        app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
@@ -132,12 +135,14 @@
         android:id="@+id/hat_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/background_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607"
+        app:layout_constraintVertical_bias="0.623"
         tools:srcCompat="@drawable/ic_launcher_background" />
 
 
