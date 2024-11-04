@@ -11,7 +11,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import edu.utsa.cs3443.progresspal.model.TaskTracker;
+
 public class newTaskActivity extends AppCompatActivity {
+
+    private static TaskTracker taskTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class newTaskActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void launchCancel(){
         Intent intentCancel = new Intent(this, homeActivity.class);

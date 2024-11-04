@@ -1,16 +1,38 @@
 package edu.utsa.cs3443.progresspal.model;
 
+import java.util.Locale;
+
 public class Staff {
     private int ID;
     private int xp;
     private boolean unlocked;
     private boolean equipped;
+    private String filename;
+    private String name;
 
-    public Staff(int ID, int xp, boolean unlocked, boolean equipped) {
+    public Staff(int ID, String name, int xp, String filename, boolean unlocked, boolean equipped) {
         this.ID = ID;
+        this.name = name;
         this.xp = xp;
+        this.filename = filename.toLowerCase();
         this.unlocked = unlocked;
         this.equipped = equipped;
+    }
+
+    private void setFilename(String filename){
+        this.filename = filename;
+    }
+
+    private String getFilename(){
+        return filename;
+    }
+
+    private void setName(){
+        this.name = name;
+    }
+
+    private String getName(){
+        return name;
     }
 
     public int getID() {

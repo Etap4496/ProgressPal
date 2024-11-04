@@ -4,10 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
+import edu.utsa.cs3443.progresspal.model.QuoteHandler;
+
 public class homeActivity extends AppCompatActivity {
+
+    private QuoteHandler quoteHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,10 @@ public class homeActivity extends AppCompatActivity {
         Button homeButton = findViewById(R.id.home_button);
         Button newTaskButton = findViewById(R.id.new_task);
 
+        ImageButton mascotQuoteButton = findViewById(R.id.mascot_quote_button);
+        TextView mascotQuoteText = findViewById(R.id.mascot_quote);
+
+        //when mascotQuoteButton is clicked the quote textView will display the next quote in the ArrayList of Quotes
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +62,10 @@ public class homeActivity extends AppCompatActivity {
                 launchNewTask();
             }
         });
+
+    }
+
+    private void newTaskDynamicSetup(){
 
     }
 

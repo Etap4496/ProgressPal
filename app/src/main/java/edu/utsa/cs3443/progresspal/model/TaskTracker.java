@@ -1,12 +1,31 @@
 package edu.utsa.cs3443.progresspal.model;
 
+import android.app.Activity;
+
 import java.util.ArrayList;
 
 public class TaskTracker {
-    private ArrayList<Task> Tasks;
 
-    public TaskTracker(ArrayList<Task> tasks) {
-        Tasks = tasks;
+    ArrayList<Task> tasks;
+
+    public TaskTracker() {
+        tasks = new ArrayList<Task>();
+    }
+
+    private void loadTasks(Activity activity){
+
+    }
+
+    private void addTasks(){
+
+    }
+
+    private void createTask(){
+
+    }
+
+    private void deleteTask(){
+
     }
 
 

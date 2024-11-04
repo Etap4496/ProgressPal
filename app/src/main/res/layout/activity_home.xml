@@ -8,6 +8,30 @@
     android:background="#D7F1F4"
     tools:context=".homeActivity">
 
+    <ImageView
+        android:id="@+id/staff_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672"
+        tools:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/hat_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588"
+        tools:srcCompat="@drawable/ic_launcher_background" />
+
     <ScrollView
         android:id="@+id/tasks_scroll_view"
         android:layout_width="405dp"
@@ -31,13 +55,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary_color"
-        android:text="@string/new_task"
+        android:text="@string/new_task_button"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.661" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -100,22 +125,20 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.241"
+        app:layout_constraintVertical_bias="0.051"
         tools:text="@string/mascot_quote" />
 
     <ImageButton
         android:id="@+id/mascot_quote_button"
-        android:layout_width="99dp"
-        android:layout_height="92dp"
-        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682"
+        app:srcCompat="@drawable/ic_launcher_background" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
