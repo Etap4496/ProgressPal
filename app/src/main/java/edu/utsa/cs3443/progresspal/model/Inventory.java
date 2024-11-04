@@ -6,11 +6,13 @@ public class Inventory {
     ArrayList<Hat> hats;
     ArrayList<Staff> staffs;
     ArrayList<Color> colors;
+    private int totalxp;
 
     public Inventory() {
         hats = new ArrayList<Hat>();
         staffs = new ArrayList<Staff>();
         colors = new ArrayList<Color>();
+        totalxp = 0;
     }
 
     public ArrayList<Hat> getHats() {
@@ -35,5 +37,9 @@ public class Inventory {
 
     public void setColors(ArrayList<Color> colors) {
         this.colors = colors;
+    }
+
+    public int getTotalxp(){
+        return totalxp;
     }
 }

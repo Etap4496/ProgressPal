@@ -24,6 +24,8 @@ public class homeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        initQuotes();
+
         Button profileButton = findViewById(R.id.profile_button);
         Button pointButton = findViewById(R.id.points_button);
         Button creditButton = findViewById(R.id.credits_button);
@@ -34,6 +36,17 @@ public class homeActivity extends AppCompatActivity {
         TextView mascotQuoteText = findViewById(R.id.mascot_quote);
 
         //when mascotQuoteButton is clicked the quote textView will display the next quote in the ArrayList of Quotes
+        mascotQuoteButton.setOnClickListener(new View.OnClickListener() {
+            int i = 0;
+            @Override
+            public void onClick(View view) {
+                if(i == quoteHandler.getQuotes().size()){
+                    i = 0;
+                }
+                mascotQuoteText.setText(quoteHandler.getQuote(i).getText());
+                i++;
+            }
+        });
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +76,11 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initQuotes(){
+        quoteHandler = new QuoteHandler();
+        quoteHandler.loadQuotes(this);
     }
 
     private void newTaskDynamicSetup(){

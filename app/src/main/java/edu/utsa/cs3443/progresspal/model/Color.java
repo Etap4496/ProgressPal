@@ -1,7 +1,5 @@
 package edu.utsa.cs3443.progresspal.model;
 
-import java.util.Locale;
-
 public class Color {
     private int ID;
     private boolean equipped;

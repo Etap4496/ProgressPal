@@ -5,10 +5,10 @@ public class Mascot {
     private String DOB;
     private Inventory inventory;
 
-    public Mascot(String name, String DOB, Inventory inventory) {
+    public Mascot(String name, String DOB) {
         this.name = name;
         this.DOB = DOB;
-        this.inventory = inventory;
+        inventory = new Inventory();
     }
 
     public String getName() {
