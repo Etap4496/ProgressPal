@@ -3,14 +3,14 @@ package edu.utsa.cs3443.progresspal.model;
 import java.util.ArrayList;
 
 public class Inventory {
-    private ArrayList<Hat> hats;
-    private ArrayList<Staff> staffs;
-    private ArrayList<Color> colors;
+    ArrayList<Hat> hats;
+    ArrayList<Staff> staffs;
+    ArrayList<Color> colors;
 
-    public Inventory(ArrayList<Hat> hats, ArrayList<Staff> staffs, ArrayList<Color> colors) {
-        this.hats = hats;
-        this.staffs = staffs;
-        this.colors = colors;
+    public Inventory() {
+        hats = new ArrayList<Hat>();
+        staffs = new ArrayList<Staff>();
+        colors = new ArrayList<Color>();
     }
 
     public ArrayList<Hat> getHats() {
