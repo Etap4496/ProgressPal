@@ -44,13 +44,7 @@ public class TaskTracker {
         tasks.add(task);
     }
 
-    public void createTask(){
-
+    public void deleteTask(Task task){
+        tasks.remove(task);
     }
-
-    public void deleteTask(){
-
-    }
-
-
 }
