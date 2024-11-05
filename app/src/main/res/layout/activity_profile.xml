@@ -41,7 +41,8 @@
                 android:background="@android:drawable/btn_default"
                 android:backgroundTint="@android:color/holo_blue_light"
                 android:gravity="center"
-                android:text="NAME" />
+                android:text="NAME"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -58,7 +59,8 @@
                 android:backgroundTint="@android:color/holo_blue_light"
                 android:gravity="center"
                 android:justificationMode="none"
-                android:text="DOB" />
+                android:text="DOB"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -112,14 +114,16 @@
             android:backgroundTint="@android:color/holo_blue_light"
             android:gravity="center"
             android:text="BUDDY AGE"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="56 days"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView10"
@@ -129,14 +133,16 @@
             android:backgroundTint="@android:color/holo_blue_light"
             android:gravity="center"
             android:text="TASKS ACCOMPLISHED"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="37"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView12"
@@ -146,14 +152,16 @@
             android:backgroundTint="@android:color/holo_blue_light"
             android:gravity="center"
             android:text="LONGEST DAILY STREAK"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="56 days"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView14"
@@ -163,14 +171,16 @@
             android:backgroundTint="@android:color/holo_blue_light"
             android:gravity="center"
             android:text="MOST TASKS COMPLETED IN A DAY"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="7"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
