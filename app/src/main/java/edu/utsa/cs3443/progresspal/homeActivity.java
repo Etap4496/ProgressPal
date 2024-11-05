@@ -29,6 +29,7 @@ public class homeActivity extends AppCompatActivity {
 
         //initializes the ArrayList of mascot quotes and loads them from the text file
         initQuotes();
+        initTaskTracker();
 
         Button profileButton = findViewById(R.id.profile_button);
         Button pointButton = findViewById(R.id.points_button);
@@ -82,9 +83,18 @@ public class homeActivity extends AppCompatActivity {
 
     }
 
+    public static TaskTracker getTaskTracker(){
+        return taskTracker;
+    }
+
     private void initQuotes(){
         quoteHandler = new QuoteHandler();
         quoteHandler.loadQuotes(this);
+    }
+
+    private void initTaskTracker(){
+        taskTracker = new TaskTracker();
+        taskTracker.loadTasks(this);
     }
 
     //not done yet- marc
