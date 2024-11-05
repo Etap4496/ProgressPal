@@ -30,9 +30,8 @@ public class TaskTracker {
                 String name = tokens[0];
                 String dueDate = tokens[1];
                 int time = Integer.parseInt(tokens[2]);
-                boolean status = Boolean.parseBoolean(tokens[3]);
 
-                addTasks(new Task(name, dueDate, time, status));
+                addTasks(new Task(name, dueDate, time));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

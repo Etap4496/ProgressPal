@@ -7,11 +7,10 @@ public class Task {
     private boolean completionStatus;
     private int xp;
 
-    public Task(String name, String dueDate, int completionTime, boolean completionStatus) {
+    public Task(String name, String dueDate, int completionTime) {
         this.name = name;
         this.dueDate = dueDate;
         this.completionTime = completionTime;
-        this.completionStatus = completionStatus;
         this.xp = completionTime * 50;
     }
 
@@ -39,13 +38,6 @@ public class Task {
         this.completionTime = completionTime;
     }
 
-    public boolean isCompletionStatus() {
-        return completionStatus;
-    }
-
-    public void setCompletionStatus(boolean completionStatus) {
-        this.completionStatus = completionStatus;
-    }
 
     public int getXp() {
         return xp;
