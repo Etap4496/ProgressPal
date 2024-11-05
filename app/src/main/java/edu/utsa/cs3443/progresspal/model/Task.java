@@ -4,7 +4,6 @@ public class Task {
     private String name;
     private String dueDate;
     private int completionTime;
-    private boolean completionStatus;
     private int xp;
 
     public Task(String name, String dueDate, int completionTime) {
