@@ -7,12 +7,12 @@ public class Task {
     private boolean completionStatus;
     private int xp;
 
-    public Task(String name, String dueDate, int completionTime, boolean completionStatus, int xp) {
+    public Task(String name, String dueDate, int completionTime, boolean completionStatus) {
         this.name = name;
         this.dueDate = dueDate;
         this.completionTime = completionTime;
         this.completionStatus = completionStatus;
-        this.xp = xp;
+        this.xp = completionTime * 50;
     }
 
     public String getName() {

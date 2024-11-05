@@ -31,9 +31,8 @@ public class TaskTracker {
                 String dueDate = tokens[1];
                 int time = Integer.parseInt(tokens[2]);
                 boolean status = Boolean.parseBoolean(tokens[3]);
-                int xp = time * 50;
 
-                addTasks(new Task(name, dueDate, time, status, xp));
+                addTasks(new Task(name, dueDate, time, status));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
