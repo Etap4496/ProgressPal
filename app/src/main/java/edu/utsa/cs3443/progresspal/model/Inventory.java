@@ -25,7 +25,10 @@ public class Inventory {
     }
 
     public void setHats(ArrayList<Hat> hats) {
-        this.hats = hats;
+        if (hats != null) {
+            this.hats.clear();
+            this.hats.addAll(hats);
+        }
     }
 
     public ArrayList<Staff> getStaffs() {
@@ -33,7 +36,10 @@ public class Inventory {
     }
 
     public void setStaffs(ArrayList<Staff> staffs) {
-        this.staffs = staffs;
+        if (staffs != null) {
+            this.staffs.clear();
+            this.staffs.addAll(staffs);
+        }
     }
 
     public ArrayList<Color> getColors() {
@@ -41,7 +47,10 @@ public class Inventory {
     }
 
     public void setColors(ArrayList<Color> colors) {
-        this.colors = colors;
+        if (colors != null) {
+            this.colors.clear();
+            this.colors.addAll(colors);
+        }
     }
 
 
@@ -50,7 +59,7 @@ public class Inventory {
         String colorFile = "colorsID.csv";
 
         try (InputStream is = manager.open(colorFile); Scanner scanner = new Scanner(is)) {
-            // Skip header line
+
             if (scanner.hasNextLine()) {
                 scanner.nextLine();
             }
@@ -68,7 +77,7 @@ public class Inventory {
                         Color color = new Color(ID, name, hexCode, false);
                         addColor(color);
                     } catch (NumberFormatException e) {
-                        System.err.println("Invalid ID format in line: " + line);
+                        System.err.println("Error for line: " + line);
                     }
                 }
             }
