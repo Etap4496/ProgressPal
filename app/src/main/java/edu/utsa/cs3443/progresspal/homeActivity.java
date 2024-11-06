@@ -42,9 +42,17 @@ public class homeActivity extends AppCompatActivity {
         Button homeButton = findViewById(R.id.home_button);
         Button newTaskButton = findViewById(R.id.new_task);
         ImageView mascotView = findViewById((R.id.mascot_quote_button));
+        ImageView hatView = findViewById((R.id.hat_image));
+        ImageView staffView = findViewById((R.id.staff_image));
 
         if (profileCustomizationActivity.ImageResID != -1) {
             mascotView.setImageResource(profileCustomizationActivity.ImageResID);
+        }
+        if (profileCustomizationActivity.hatImageResID != -1) {
+            hatView.setImageResource(profileCustomizationActivity.hatImageResID);
+        }
+        if (profileCustomizationActivity.staffImageResID != -1) {
+            staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
 
         ImageButton mascotQuoteButton = findViewById(R.id.mascot_quote_button);
