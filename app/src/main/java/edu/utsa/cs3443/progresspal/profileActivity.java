@@ -21,11 +21,18 @@ public class profileActivity extends AppCompatActivity {
         Button homeButton = findViewById(R.id.home_button);
         Button customizeButton = findViewById(R.id.customize_button);
         ImageView mascotView = findViewById((R.id.mascot));
+        ImageView hatView = findViewById((R.id.hat));
+        ImageView staffView = findViewById((R.id.staff));
 
         if (profileCustomizationActivity.ImageResID != -1) {
             mascotView.setImageResource(profileCustomizationActivity.ImageResID);
         }
-
+        if (profileCustomizationActivity.hatImageResID != -1) {
+            hatView.setImageResource(profileCustomizationActivity.hatImageResID);
+        }
+        if (profileCustomizationActivity.staffImageResID != -1) {
+            staffView.setImageResource(profileCustomizationActivity.staffImageResID);
+        }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

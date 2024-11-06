@@ -20,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;
+    public static int hatImageResID = -1;
+    public static int staffImageResID = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageButton redHatButton = findViewById(R.id.red_hat);
         ImageButton greenBlueHatButton = findViewById(R.id.green_blue_hat);
         ImageButton purpleHatButton = findViewById(R.id.purple_hat);
-        ImageButton blueHaButton = findViewById(R.id.blue_hat);
+        ImageButton blueHatButton = findViewById(R.id.blue_hat);
         ImageButton greenStaffButton  = findViewById(R.id.green_staff);
         ImageButton redStaffButton = findViewById(R.id.red_staff);
         ImageButton purpleStaffButton = findViewById(R.id.purple_staff);
@@ -49,6 +51,60 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View view) {
                 launchBack();
+            }
+        });
+        greenHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.green_hat;
+            }
+        });
+        blackHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.black_hat;
+            }
+        });
+        redHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.red_hat;
+            }
+        });
+        greenBlueHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.green_blue_hat;
+            }
+        });
+        purpleHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.purple_hat;
+            }
+        });
+        blueHatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hatImageResID = R.drawable.blue_hat;
+            }
+        });
+        greenStaffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                staffImageResID = R.drawable.green_staff;
+            }
+        });
+        redStaffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                staffImageResID = R.drawable.red_staff;
+            }
+        });
+        purpleStaffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                staffImageResID = R.drawable.purple_staff;
             }
         });
     }
