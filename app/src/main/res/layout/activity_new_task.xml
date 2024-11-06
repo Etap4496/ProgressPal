@@ -83,7 +83,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
-            android:paddingTop="385dp"
+            android:paddingTop="340dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
