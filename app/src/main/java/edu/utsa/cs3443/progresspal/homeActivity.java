@@ -144,7 +144,13 @@ public class homeActivity extends AppCompatActivity {
             horizontalLayout.addView(taskName);
 
             ImageView timeIcon = new ImageView(this);
-            
+            int imageResource = getResources().getIdentifier("time_icon", "drawable", getPackageName());
+            timeIcon.setImageResource(imageResource);
+            timeIcon.setLayoutParams(new LinearLayout.LayoutParams(125, 125));
+            timeIcon.setPadding(0, 0, 0, 0);
+
+            horizontalLayout.addView(timeIcon);
+
             rootLayout.addView(horizontalLayout);
         }
     }
