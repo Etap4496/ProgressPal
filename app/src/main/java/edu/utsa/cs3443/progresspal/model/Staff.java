@@ -8,7 +8,7 @@ public class Staff {
     private String filename;
     private String name;
 
-    public Staff(int ID, String name, int xp, String filename, boolean unlocked, boolean equipped) {
+    public Staff(int ID, String name, int xp, String filename) {
         this.ID = ID;
         this.name = name;
         this.xp = xp;

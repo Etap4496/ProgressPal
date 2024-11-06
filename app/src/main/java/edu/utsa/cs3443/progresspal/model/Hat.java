@@ -8,7 +8,7 @@ public class Hat {
     private String filename;
     private String name;
 
-    public Hat(int ID, String name, int xp, String filename, boolean unlocked, boolean equipped) {
+    public Hat(int ID, String name, int xp, String filename) {
         this.ID = ID;
         this.name = name;
         this.xp = xp;
