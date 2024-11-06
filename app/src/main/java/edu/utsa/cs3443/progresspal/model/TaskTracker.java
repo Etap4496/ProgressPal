@@ -42,7 +42,10 @@ public class TaskTracker {
         tasks.add(task);
     }
 
-    public void deleteTask(Task task){
-        tasks.remove(task);
+    public void deleteTask(Task task, Stats stats){
+    }
+
+    public ArrayList<Task> getTasks(){
+        return tasks;
     }
 }

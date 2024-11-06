@@ -14,8 +14,9 @@ public class pointsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_points);
 
+        loadXP();
+
         Button profileButton = findViewById(R.id.profile_button);
-        Button pointButton = findViewById(R.id.points_button);
         Button creditButton = findViewById(R.id.credits_button);
         Button homeButton = findViewById(R.id.home_button);
 
@@ -39,6 +40,10 @@ public class pointsActivity extends AppCompatActivity {
                 launchCredit();
             }
         });
+    }
+
+    private void loadXP(){
+
     }
 
     private void launchProfile(){
