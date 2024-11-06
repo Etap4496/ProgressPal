@@ -41,7 +41,12 @@ public class QuoteHandler {
     }
 
     public String getRandomQuote(){
-        return null;
+        if (quotes.isEmpty()) {
+            return "No quotes available";
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(quotes.size());
+        return quotes.get(randomIndex).getText();
     }
 
     public ArrayList<Quote> getQuotes(){
