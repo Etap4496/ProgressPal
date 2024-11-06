@@ -59,7 +59,6 @@ public class Inventory {
         String colorFile = "colorsID.csv";
 
         try (InputStream is = manager.open(colorFile); Scanner scanner = new Scanner(is)) {
-
             if (scanner.hasNextLine()) {
                 scanner.nextLine();
             }
@@ -67,7 +66,6 @@ public class Inventory {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] tokens = line.split(",");
-
 
                 if (tokens.length >= 3) {
                     try {
@@ -86,11 +84,83 @@ public class Inventory {
         }
     }
 
+
+    public void loadHatsFromCSV(Activity activity) {
+        AssetManager manager = activity.getAssets();
+        String hatFile = "hatID.csv";
+
+        try (InputStream is = manager.open(hatFile); Scanner scanner = new Scanner(is)) {
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] tokens = line.split(",");
+
+                if (tokens.length >= 4) {
+                    try {
+                        int ID = Integer.parseInt(tokens[0].trim());
+                        String name = tokens[1].trim();
+                        int xpPrice = Integer.parseInt(tokens[2].trim());
+                        String imageFile = tokens[3].trim();
+                        Hat hat = new Hat(ID, name, xpPrice, imageFile);
+                        addHat(hat);
+                    } catch (NumberFormatException e) {
+                        System.err.println("Error for line: " + line);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void loadStaffsFromCSV(Activity activity) {
+        AssetManager manager = activity.getAssets();
+        String staffFile = "staffID.csv";
+
+        try (InputStream is = manager.open(staffFile); Scanner scanner = new Scanner(is)) {
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] tokens = line.split(",");
+
+                if (tokens.length >= 4) {
+                    try {
+                        int ID = Integer.parseInt(tokens[0].trim());
+                        String name = tokens[1].trim();
+                        int xpPrice = Integer.parseInt(tokens[2].trim());
+                        String imageFile = tokens[3].trim();
+                        Staff staff = new Staff(ID, name, xpPrice, imageFile);
+                        addStaff(staff);
+                    } catch (NumberFormatException e) {
+                        System.err.println("Error for line: " + line);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public int getTotalxp() {
         return totalxp;
     }
 
     public void addColor(Color color) {
         colors.add(color);
+    }
+
+    public void addHat(Hat hat) {
+        hats.add(hat);
+    }
+
+    public void addStaff(Staff staff) {
+        staffs.add(staff);
     }
 }
