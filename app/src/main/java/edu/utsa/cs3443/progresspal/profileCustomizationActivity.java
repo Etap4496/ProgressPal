@@ -1,12 +1,15 @@
 package edu.utsa.cs3443.progresspal;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +19,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public static int ImageResID = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,20 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         //implement method for color change of mascot
+        switch (i) {
+            case 0:
+                ImageResID = R.drawable.red_lizard;
+                break;
+            case 1:
+                ImageResID = R.drawable.green_lizard;
+                break;
+            case 2:
+                ImageResID = R.drawable.blue_lizard;
+                break;
+            case 3:
+                ImageResID = R.drawable.pink_lizard;
+                break;
+        }
     }
 
     @Override

@@ -95,6 +95,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:backgroundTint="@color/background_color"
+        android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

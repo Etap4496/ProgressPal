@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,6 +37,11 @@ public class homeActivity extends AppCompatActivity {
         Button creditButton = findViewById(R.id.credits_button);
         Button homeButton = findViewById(R.id.home_button);
         Button newTaskButton = findViewById(R.id.new_task);
+        ImageView mascotView = findViewById((R.id.mascot_quote_button));
+
+        if (profileCustomizationActivity.ImageResID != -1) {
+            mascotView.setImageResource(profileCustomizationActivity.ImageResID);
+        }
 
         ImageButton mascotQuoteButton = findViewById(R.id.mascot_quote_button);
         TextView mascotQuoteText = findViewById(R.id.mascot_quote);
