@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ public class pointsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_points);
 
         loadXP();
+        loadMostTasksCompleted();
 
         Button profileButton = findViewById(R.id.profile_button);
         Button creditButton = findViewById(R.id.credits_button);
@@ -43,7 +45,13 @@ public class pointsActivity extends AppCompatActivity {
     }
 
     private void loadXP(){
+        TextView textXP = findViewById(R.id.pointsTotalXP);
+        //textXP.setText(stats.getTotalXP());
+    }
 
+    private void loadMostTasksCompleted(){
+        TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
+        //lifeTimeTasks.setText(stats.getTasksCompleted());
     }
 
     private void launchProfile(){

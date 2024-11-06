@@ -42,7 +42,9 @@ public class TaskTracker {
         tasks.add(task);
     }
 
-    public void deleteTask(Task task, Stats stats){
+    public void deleteTask(Task task){
+        //stats.setTotalXP(task.getXp());
+        tasks.remove(task);
     }
 
     public ArrayList<Task> getTasks(){
