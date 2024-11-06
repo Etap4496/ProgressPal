@@ -1,8 +1,12 @@
 package edu.utsa.cs3443.progresspal;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -87,6 +91,8 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+        newTaskDynamicSetup(taskTracker.getTasks());
+
     }
 
     public static TaskTracker getTaskTracker(){
@@ -108,7 +114,38 @@ public class homeActivity extends AppCompatActivity {
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.tasks_root_LL);
 
         for(Task task : tasks){
-            Button myButton = new Button(this);
+
+            //Create a horizontal linear layout for each task
+            LinearLayout horizontalLayout = new LinearLayout(this);
+            horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            horizontalLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+            horizontalLayout.setPadding(10, 50, 10, 50);
+            horizontalLayout.setGravity(Gravity.LEFT);
+            horizontalLayout.setBackgroundColor(Color.parseColor("#B3E5FC"));
+
+            //Create a Button for the completion of a task
+            Button completionButton = new Button(this);
+            completionButton.setText("O");
+            completionButton.setTextSize(12);
+            completionButton.setTextColor(Color.BLACK);
+            completionButton.setBackgroundColor(Color.WHITE);
+            completionButton.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+
+            horizontalLayout.addView(completionButton);
+
+            TextView taskName = new TextView(this);
+            taskName.setText(task.getName());
+            taskName.setTextSize(20);
+            taskName.setTypeface(Typeface.DEFAULT_BOLD);
+            taskName.setTextColor(Color.BLACK);
+            taskName.setPadding(40,0,0,0);
+            taskName.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+
+            horizontalLayout.addView(taskName);
+
+            ImageView timeIcon = new ImageView(this);
+            
+            rootLayout.addView(horizontalLayout);
         }
     }
 
