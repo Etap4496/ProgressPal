@@ -8,6 +8,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -117,9 +119,8 @@ public class homeActivity extends AppCompatActivity {
         taskTracker.loadTasks(this);
     }
 
-    //not done yet- marc
     private void newTaskDynamicSetup(ArrayList<Task> tasks){
-        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.tasks_root_LL);
+        LinearLayout rootLayout = findViewById(R.id.tasks_root_LL);
 
         for(Task task : tasks){
 
@@ -127,37 +128,81 @@ public class homeActivity extends AppCompatActivity {
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
             horizontalLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-            horizontalLayout.setPadding(10, 50, 10, 50);
-            horizontalLayout.setGravity(Gravity.LEFT);
+            horizontalLayout.setPadding(0, 75, 0, 75);
             horizontalLayout.setBackgroundColor(Color.parseColor("#B3E5FC"));
 
-            //Create a Button for the completion of a task
-            Button completionButton = new Button(this);
-            completionButton.setText("O");
-            completionButton.setTextSize(12);
-            completionButton.setTextColor(Color.BLACK);
-            completionButton.setBackgroundColor(Color.WHITE);
-            completionButton.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+            //Create a check box for the completion of a task
+            CheckBox completionBox = new CheckBox(this);
+            completionBox.setWidth(100);
+            completionBox.setHeight(100);
+            completionBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if(isChecked){
+                        horizontalLayout.setBackgroundColor(Color.GREEN);
+                    }
+                    else{
+                        horizontalLayout.setBackgroundColor(Color.parseColor("#B3E5FC"));
+                    }
+                }
+            });
 
-            horizontalLayout.addView(completionButton);
+            horizontalLayout.addView(completionBox);
+
+            LinearLayout taskAndDueDateLayout = new LinearLayout(this);
+            taskAndDueDateLayout.setOrientation(LinearLayout.VERTICAL);
+            taskAndDueDateLayout.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT,1));
+
+            horizontalLayout.addView(taskAndDueDateLayout);
 
             TextView taskName = new TextView(this);
             taskName.setText(task.getName());
-            taskName.setTextSize(20);
+            taskName.setTextSize(15);
             taskName.setTypeface(Typeface.DEFAULT_BOLD);
             taskName.setTextColor(Color.BLACK);
-            taskName.setPadding(40,0,0,0);
-            taskName.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+            taskName.setPadding(0,0,100,0);
+            taskName.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,1));
 
-            horizontalLayout.addView(taskName);
+            taskAndDueDateLayout.addView(taskName);
+
+            TextView dueDate = new TextView(this);
+            dueDate.setText(task.getDueDate());
+            dueDate.setTextSize(12);
+            dueDate.setTextColor(Color.BLACK);
+            dueDate.setPadding(0,0,100,0);
+            dueDate.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,1));
+
+            taskAndDueDateLayout.addView(dueDate);
+
+            //create a vertical linear layout to store the time icon on top and the estimated completion time on the bottom
+            LinearLayout timeLayout = new LinearLayout(this);
+            timeLayout.setOrientation(LinearLayout.VERTICAL);
+            timeLayout.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT,1));
+
+            horizontalLayout.addView(timeLayout);
 
             ImageView timeIcon = new ImageView(this);
-            int imageResource = getResources().getIdentifier("time_icon", "drawable", getPackageName());
-            timeIcon.setImageResource(imageResource);
-            timeIcon.setLayoutParams(new LinearLayout.LayoutParams(125, 125));
+            int imageResource1 = getResources().getIdentifier("time_icon", "drawable", getPackageName());
+            timeIcon.setImageResource(imageResource1);
+            timeIcon.setLayoutParams(new LinearLayout.LayoutParams(85, 85));
             timeIcon.setPadding(0, 0, 0, 0);
 
-            horizontalLayout.addView(timeIcon);
+            timeLayout.addView(timeIcon);
+
+            TextView estimatedTimeText = new TextView(this);
+            estimatedTimeText.setText(task.getCompletionTimeString());
+            estimatedTimeText.setTextSize(12);
+            estimatedTimeText.setGravity(Gravity.LEFT);
+
+            timeLayout.addView(estimatedTimeText);
+
+            ImageView xpIcon = new ImageView(this);
+            int imageResource2 = getResources().getIdentifier("energy_icon", "drawable", getPackageName());
+            xpIcon.setImageResource(imageResource2);
+            xpIcon.setLayoutParams(new LinearLayout.LayoutParams(110, 110));
+            xpIcon.setPadding(0, 0, 0, 0);
+
+            horizontalLayout.addView(xpIcon);
 
             rootLayout.addView(horizontalLayout);
         }

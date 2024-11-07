@@ -45,4 +45,8 @@ public class Task {
     public void setXp(int xp) {
         this.xp = xp;
     }
+
+    public String getCompletionTimeString(){
+        return String.valueOf(completionTime) + " hrs";
+    }
 }
