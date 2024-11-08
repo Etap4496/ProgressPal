@@ -128,13 +128,14 @@ public class homeActivity extends AppCompatActivity {
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
             horizontalLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-            horizontalLayout.setPadding(0, 75, 0, 75);
+            horizontalLayout.setPadding(75, 50, 50, 75);
             horizontalLayout.setBackgroundColor(Color.parseColor("#B3E5FC"));
 
             //Create a check box for the completion of a task
             CheckBox completionBox = new CheckBox(this);
             completionBox.setWidth(100);
             completionBox.setHeight(100);
+            completionBox.setPadding(0,0,0,0);
             completionBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
