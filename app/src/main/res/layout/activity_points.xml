@@ -111,41 +111,46 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/home_button"
             android:layout_width="85dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            android:text="home"
-            android:textSize="10sp" />
+            android:backgroundTint="@color/primary_color"
+            app:srcCompat="@drawable/home_nav_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/points_button"
             android:layout_width="85dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
-            android:text="point"
-            android:textSize="10sp" />
+            app:srcCompat="@drawable/xp_nav_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/profile_button"
             android:layout_width="85dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
-            android:text="profile"
-            android:textSize="10sp" />
+            app:srcCompat="@drawable/profile_nav_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/credits_button"
             android:layout_width="85dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
-            android:text="credits"
-            android:textSize="10sp" />
+            app:srcCompat="@drawable/settings_nav_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
     </LinearLayout>
 
     <ImageView

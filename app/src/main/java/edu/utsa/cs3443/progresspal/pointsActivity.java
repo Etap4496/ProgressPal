@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +19,9 @@ public class pointsActivity extends AppCompatActivity {
         loadXP();
         loadMostTasksCompleted();
 
-        Button profileButton = findViewById(R.id.profile_button);
-        Button creditButton = findViewById(R.id.credits_button);
-        Button homeButton = findViewById(R.id.home_button);
+        ImageButton profileButton = findViewById(R.id.profile_button);
+        ImageButton creditButton = findViewById(R.id.credits_button);
+        ImageButton homeButton = findViewById(R.id.home_button);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
