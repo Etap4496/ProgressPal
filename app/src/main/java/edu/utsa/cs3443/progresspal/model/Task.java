@@ -49,4 +49,8 @@ public class Task {
     public String getCompletionTimeString(){
         return String.valueOf(completionTime) + " hrs";
     }
+
+    public String getXpString(){
+        return String.valueOf(xp) + " hrs";
+    }
 }

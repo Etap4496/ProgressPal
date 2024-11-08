@@ -38,10 +38,10 @@ public class homeActivity extends AppCompatActivity {
         initQuotes();
         initTaskTracker();
 
-        Button profileButton = findViewById(R.id.profile_button);
-        Button pointButton = findViewById(R.id.points_button);
-        Button creditButton = findViewById(R.id.credits_button);
-        Button homeButton = findViewById(R.id.home_button);
+        ImageButton profileButton = findViewById(R.id.profile_button);
+        ImageButton pointButton = findViewById(R.id.points_button);
+        ImageButton creditButton = findViewById(R.id.credits_button);
+        ImageButton homeButton = findViewById(R.id.home_button);
         Button newTaskButton = findViewById(R.id.new_task);
         ImageView mascotView = findViewById((R.id.mascot_quote_button));
         ImageView hatView = findViewById((R.id.hat_image));
@@ -177,14 +177,14 @@ public class homeActivity extends AppCompatActivity {
             //create a vertical linear layout to store the time icon on top and the estimated completion time on the bottom
             LinearLayout timeLayout = new LinearLayout(this);
             timeLayout.setOrientation(LinearLayout.VERTICAL);
-            timeLayout.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT,1));
+            timeLayout.setLayoutParams(new LinearLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT,1));
 
             horizontalLayout.addView(timeLayout);
 
             ImageView timeIcon = new ImageView(this);
             int imageResource1 = getResources().getIdentifier("time_icon", "drawable", getPackageName());
             timeIcon.setImageResource(imageResource1);
-            timeIcon.setLayoutParams(new LinearLayout.LayoutParams(85, 85));
+            timeIcon.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
             timeIcon.setPadding(0, 0, 0, 0);
 
             timeLayout.addView(timeIcon);
@@ -196,13 +196,28 @@ public class homeActivity extends AppCompatActivity {
 
             timeLayout.addView(estimatedTimeText);
 
+            LinearLayout xpLayout = new LinearLayout(this);
+            xpLayout.setOrientation(LinearLayout.VERTICAL);
+            xpLayout.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT,1));
+
+            horizontalLayout.addView(xpLayout);
+
             ImageView xpIcon = new ImageView(this);
             int imageResource2 = getResources().getIdentifier("energy_icon", "drawable", getPackageName());
             xpIcon.setImageResource(imageResource2);
-            xpIcon.setLayoutParams(new LinearLayout.LayoutParams(110, 110));
+            xpIcon.setForegroundGravity(Gravity.CENTER);
+            xpIcon.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
             xpIcon.setPadding(0, 0, 0, 0);
 
-            horizontalLayout.addView(xpIcon);
+            xpLayout.addView(xpIcon);
+
+            TextView xpText = new TextView(this);
+            xpText.setText(String.valueOf(task.getXpString()));
+            xpText.setTextSize(12);
+            xpText.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+            xpText.setGravity(Gravity.START);
+
+            xpLayout.addView(xpText);
 
             rootLayout.addView(horizontalLayout);
         }
