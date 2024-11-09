@@ -51,6 +51,6 @@ public class Task {
     }
 
     public String getXpString(){
-        return String.valueOf(xp) + " hrs";
+        return String.valueOf(xp) + " xp";
     }
 }

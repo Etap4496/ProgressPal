@@ -40,8 +40,9 @@ public class newTaskActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 TaskTracker taskTracker = homeActivity.getTaskTracker();
-                int completionTime = Integer.parseInt(String.valueOf(time.getText()));
-                taskTracker.addTasks(new Task(taskName.toString(), dueDate.toString(), completionTime));
+                int completionTime = Integer.parseInt(String.valueOf(time.getText().toString()));
+                taskTracker.addTasks(new Task(taskName.getText().toString(), dueDate.getText().toString(), completionTime));
+                taskTracker.saveTasks();
                 launchCreateTask();
             }
         });

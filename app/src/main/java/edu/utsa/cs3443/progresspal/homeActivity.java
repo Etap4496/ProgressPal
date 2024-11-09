@@ -37,6 +37,7 @@ public class homeActivity extends AppCompatActivity {
         //initializes the ArrayList of mascot quotes and loads them from the text file
         initQuotes();
         initTaskTracker();
+        taskTracker.initializeTasks();
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton pointButton = findViewById(R.id.points_button);
@@ -115,8 +116,7 @@ public class homeActivity extends AppCompatActivity {
     }
 
     private void initTaskTracker(){
-        taskTracker = new TaskTracker();
-        taskTracker.loadTasks(this);
+        taskTracker = new TaskTracker(this);
     }
 
     private void newTaskDynamicSetup(ArrayList<Task> tasks){
