@@ -17,14 +17,10 @@ public class pointsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_points);
 
-        TaskTracker taskTracker = new TaskTracker(this);
-        taskTracker.initializeTasks();
+        TaskTracker taskTracker = homeActivity.getTaskTracker();
 
-        TextView totalXpTextView = findViewById(R.id.pointsTotalXP);
-        totalXpTextView.setText("Total XP: " + taskTracker.getTotalXp());
-
-        loadXP();
-        loadMostTasksCompleted();
+        loadXP(taskTracker);
+        loadMostTasksCompleted(taskTracker);
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton creditButton = findViewById(R.id.credits_button);
@@ -63,20 +59,18 @@ public class pointsActivity extends AppCompatActivity {
                 launchCredit();
             }
         });
+
+
     }
 
-    private void loadXP(){
+    private void loadXP(TaskTracker taskTracker){
         TextView textXP = findViewById(R.id.pointsTotalXP);
-        TaskTracker taskTracker = new TaskTracker(this);
-        taskTracker.initializeTasks();
-        textXP.setText(" " + taskTracker.getTotalXp() + " ");
+        textXP.setText(String.valueOf(taskTracker.getTotalXp()));
     }
 
-    private void loadMostTasksCompleted(){
+    private void loadMostTasksCompleted(TaskTracker taskTracker){
         TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
-        TaskTracker taskTracker = new TaskTracker(this);
-        taskTracker.initializeTasks();
-        //lifeTimeTasks.setText("Tasks Completed: " + taskTracker.getTasksCompleted());
+        lifeTimeTasks.setText(String.valueOf(taskTracker.getTasks().size()));
     }
 
     private void launchProfile(){
