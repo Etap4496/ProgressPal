@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
@@ -28,6 +29,19 @@ public class pointsActivity extends AppCompatActivity {
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton creditButton = findViewById(R.id.credits_button);
         ImageButton homeButton = findViewById(R.id.home_button);
+        ImageView mascotView = findViewById((R.id.imageView2));
+        ImageView hatView = findViewById((R.id.imageView10));
+        ImageView staffView = findViewById((R.id.imageView13));
+
+        if (profileCustomizationActivity.ImageResID != -1) {
+            mascotView.setImageResource(profileCustomizationActivity.ImageResID);
+        }
+        if (profileCustomizationActivity.hatImageResID != -1) {
+            hatView.setImageResource(profileCustomizationActivity.hatImageResID);
+        }
+        if (profileCustomizationActivity.staffImageResID != -1) {
+            staffView.setImageResource(profileCustomizationActivity.staffImageResID);
+        }
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
