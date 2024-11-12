@@ -104,7 +104,7 @@ public class TaskTracker {
     }
 
 
-
+//tallies up the total xp, called from pointsActivity
     public int getTotalXp() {
         int totalXp = 0;
         for (Task task : tasks) {
