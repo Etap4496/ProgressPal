@@ -16,12 +16,12 @@ import java.util.Scanner;
 
 public class TaskTracker {
 
-    ArrayList<Task> tasks;
+    private final ArrayList<Task> tasks;
     private final Activity activity;
     private final String filename;
 
     public TaskTracker(Activity activity) {
-        tasks = new ArrayList<Task>();
+        tasks = new ArrayList<>();
         this.activity = activity;
         filename = "tasks4.csv";
     }
@@ -96,6 +96,7 @@ public class TaskTracker {
 
     public void deleteTask(Task task){
         tasks.remove(task);
+        saveTasks();
         //deleteLineFromCSV(task.getName());
     }
 
