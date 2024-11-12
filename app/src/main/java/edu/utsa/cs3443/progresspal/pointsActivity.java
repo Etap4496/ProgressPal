@@ -55,7 +55,7 @@ public class pointsActivity extends AppCompatActivity {
         TextView textXP = findViewById(R.id.pointsTotalXP);
         TaskTracker taskTracker = new TaskTracker(this);
         taskTracker.initializeTasks();
-        textXP.setText("Total XP: " + taskTracker.getTotalXp());
+        textXP.setText(" " + taskTracker.getTotalXp() + " ");
     }
 
     private void loadMostTasksCompleted(){
