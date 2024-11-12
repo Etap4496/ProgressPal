@@ -141,7 +141,7 @@ public class homeActivity extends AppCompatActivity {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         horizontalLayout.setBackgroundColor(Color.GREEN);
-
+                        taskTracker.deleteTask(task);
                         rootLayout.removeView(horizontalLayout);
                     }
                     else{

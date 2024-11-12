@@ -95,8 +95,26 @@ public class TaskTracker {
     }
 
     public void deleteTask(Task task){
-        //stats.setTotalXP(task.getXp());
         tasks.remove(task);
+        //deleteLineFromCSV(task.getName());
+    }
+
+    private void deleteLineFromCSV(String name) throws FileNotFoundException {
+        InputStream in = activity.openFileInput(filename);
+        ArrayList<String> linesToKeep = new ArrayList<>();
+        Scanner scan = new Scanner(in);
+
+        //read and copy the csv line by line with exception to the undesired one
+        scan.nextLine();
+        while(scan.hasNextLine()){
+            String line = scan.nextLine();
+            String[] tokens = line.split(",");
+            String name2 = tokens[0];
+
+            if(!name.equals(name2)){
+                linesToKeep.add(line);
+            }
+        }
     }
 
     public ArrayList<Task> getTasks(){
