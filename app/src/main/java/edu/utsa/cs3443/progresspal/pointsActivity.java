@@ -3,9 +3,9 @@ package edu.utsa.cs3443.progresspal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,12 @@ public class pointsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_points);
+
+        TaskTracker taskTracker = new TaskTracker(this);
+        taskTracker.initializeTasks();
+
+        TextView totalXpTextView = findViewById(R.id.pointsTotalXP);
+        totalXpTextView.setText("Total XP: " + taskTracker.getTotalXp());
 
         loadXP();
         loadMostTasksCompleted();
@@ -47,12 +53,16 @@ public class pointsActivity extends AppCompatActivity {
 
     private void loadXP(){
         TextView textXP = findViewById(R.id.pointsTotalXP);
-        //textXP.setText(stats.getTotalXP());
+        TaskTracker taskTracker = new TaskTracker(this);
+        taskTracker.initializeTasks();
+        textXP.setText("Total XP: " + taskTracker.getTotalXp());
     }
 
     private void loadMostTasksCompleted(){
         TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
-        //lifeTimeTasks.setText(stats.getTasksCompleted());
+        TaskTracker taskTracker = new TaskTracker(this);
+        taskTracker.initializeTasks();
+        //lifeTimeTasks.setText("Tasks Completed: " + taskTracker.getTasksCompleted());
     }
 
     private void launchProfile(){

@@ -61,6 +61,8 @@ public class profileActivity extends AppCompatActivity {
                 launchProfileCustomization();
             }
         });
+
+
     }
 
     private void launchPoint(){

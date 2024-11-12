@@ -102,4 +102,14 @@ public class TaskTracker {
     public ArrayList<Task> getTasks(){
         return tasks;
     }
+
+
+
+    public int getTotalXp() {
+        int totalXp = 0;
+        for (Task task : tasks) {
+            totalXp += task.getXp();
+        }
+        return totalXp;
+    }
 }
