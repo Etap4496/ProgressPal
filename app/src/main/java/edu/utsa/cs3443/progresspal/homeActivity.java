@@ -141,6 +141,8 @@ public class homeActivity extends AppCompatActivity {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         horizontalLayout.setBackgroundColor(Color.GREEN);
+
+                        rootLayout.removeView(horizontalLayout);
                     }
                     else{
                         horizontalLayout.setBackgroundColor(Color.parseColor("#B3E5FC"));
