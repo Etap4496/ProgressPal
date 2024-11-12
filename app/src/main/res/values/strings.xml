@@ -19,6 +19,11 @@
     <string name="hat_selections">Hats</string>
     <string name="staff_selections">Staffs</string>
 
+    <string name="github_mathew">Mathew\'s Github</string>
+    <string name="github_marc">Marc\'s Github</string>
+    <string name="github_eli">Eli\'s Github</string>
+    <string name="github_Leslie">Leslie\'s Github</string>
+
     <string-array name="mascot_colors">
         <item>Red</item>
         <item>Green</item>

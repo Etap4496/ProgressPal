@@ -73,7 +73,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.698">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -83,16 +83,13 @@
             android:rotationY="180"
             app:srcCompat="@drawable/green_lizard" />
 
-        <TextView
-            android:id="@+id/textView16"
+        <Button
+            android:id="@+id/mathew_github"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="Mathew Robillard"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:backgroundTint="@color/primary_color"
+            android:text="@string/github_mathew"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView22"
@@ -108,16 +105,13 @@
             android:rotationY="180"
             app:srcCompat="@drawable/pink_lizard" />
 
-        <TextView
-            android:id="@+id/textView20"
+        <Button
+            android:id="@+id/marc_github"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="Marc Jabian"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:backgroundTint="@color/primary_color"
+            android:text="@string/github_marc"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView24"
@@ -145,16 +139,13 @@
             android:layout_height="150dp"
             app:srcCompat="@drawable/red_lizard" />
 
-        <TextView
-            android:id="@+id/textView19"
+        <Button
+            android:id="@+id/eli_github"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="Eli Tapia"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:backgroundTint="@color/primary_color"
+            android:text="@string/github_eli"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView23"
@@ -170,16 +161,13 @@
 
             app:srcCompat="@drawable/blue_lizard" />
 
-        <TextView
-            android:id="@+id/textView21"
+        <Button
+            android:id="@+id/leslie_github"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="Leslie Henley"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:backgroundTint="@color/primary_color"
+            android:text="@string/github_Leslie"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView25"
