@@ -2,21 +2,16 @@ package edu.utsa.cs3443.progresspal;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.Image;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;
@@ -28,6 +23,12 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_customization);
 
+        // Load previous selections from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
+        ImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard);
+        hatImageResID = sharedPreferences.getInt("hat", -1);  // Default to -1 if not set
+        staffImageResID = sharedPreferences.getInt("staff", -1);  // Default to -1 if not set
+
         Button backButton = findViewById(R.id.back_button);
 
         ImageButton blackHatButton = findViewById(R.id.black_hat);
@@ -36,7 +37,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageButton greenBlueHatButton = findViewById(R.id.green_blue_hat);
         ImageButton purpleHatButton = findViewById(R.id.purple_hat);
         ImageButton blueHatButton = findViewById(R.id.blue_hat);
-        ImageButton greenStaffButton  = findViewById(R.id.green_staff);
+        ImageButton greenStaffButton = findViewById(R.id.green_staff);
         ImageButton redStaffButton = findViewById(R.id.red_staff);
         ImageButton purpleStaffButton = findViewById(R.id.purple_staff);
 
@@ -53,58 +54,71 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                 launchBack();
             }
         });
+
+        // Save each hat selection to SharedPreferences
         greenHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.green_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
         blackHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.black_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
         redHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.red_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
         greenBlueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.green_blue_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
         purpleHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.purple_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
         blueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.blue_hat;
+                saveSelection("hat", hatImageResID);
             }
         });
+
+        // Save each staff selection to SharedPreferences
         greenStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.green_staff;
+                saveSelection("staff", staffImageResID);
             }
         });
         redStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.red_staff;
+                saveSelection("staff", staffImageResID);
             }
         });
         purpleStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.purple_staff;
+                saveSelection("staff", staffImageResID);
             }
         });
     }
@@ -116,7 +130,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        //implement method for color change of mascot
+        // Set and save mascot color based on selection
         switch (i) {
             case 0:
                 ImageResID = R.drawable.red_lizard;
@@ -131,10 +145,18 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                 ImageResID = R.drawable.pink_lizard;
                 break;
         }
+        saveSelection("mascotColor", ImageResID);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+    }
 
+    // Method to save selections to SharedPreferences
+    private void saveSelection(String key, int resID) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(key, resID);
+        editor.apply();
     }
 }

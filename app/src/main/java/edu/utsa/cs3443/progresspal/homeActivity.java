@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.progresspal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -37,6 +38,35 @@ public class homeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Retrieve saved selections from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
+        int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
+        int hatImageResID = sharedPreferences.getInt("hat", -1);
+        int staffImageResID = sharedPreferences.getInt("staff", -1);
+
+        // Update UI elements
+        ImageView mascotImageView = findViewById(R.id.mascot_quote_button);
+        ImageView hatImageView = findViewById(R.id.hat_image);
+        ImageView staffImageView = findViewById(R.id.staff_image);
+
+        // Set the mascot image
+        mascotImageView.setImageResource(mascotImageResID);
+
+        // Set the hat image if a hat is selected
+        if (hatImageResID != -1) {
+            hatImageView.setImageResource(hatImageResID);
+            hatImageView.setVisibility(View.VISIBLE); // Ensure visibility
+        } else {
+            hatImageView.setVisibility(View.GONE); // Hide if no hat is selected
+        }
+
+        // Set the staff image if a staff is selected
+        if (staffImageResID != -1) {
+            staffImageView.setImageResource(staffImageResID);
+            staffImageView.setVisibility(View.VISIBLE); // Ensure visibility
+        } else {
+            staffImageView.setVisibility(View.GONE); // Hide if no staff is selected
+        }
         //initializes the ArrayList of mascot quotes and loads them from the text file
         initQuotes();
         initTaskTracker();
