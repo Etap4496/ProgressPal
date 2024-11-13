@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.utsa.cs3443.progresspal.model.Stats;
 
 public class profileActivity extends AppCompatActivity {
 
@@ -15,6 +18,11 @@ public class profileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Stats stats = homeActivity.getStats();
+        stats.initializeStats();
+
+        loadMostTasksCompleted(stats);
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton pointButton = findViewById(R.id.points_button);
@@ -63,6 +71,11 @@ public class profileActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void loadMostTasksCompleted(Stats stats) {
+        TextView lifeTimeTasks = findViewById(R.id.tasksaccomp);
+        lifeTimeTasks.setText(String.valueOf(stats.getTasksCompleted()));
     }
 
     private void launchPoint(){

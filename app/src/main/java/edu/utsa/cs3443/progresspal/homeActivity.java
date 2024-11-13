@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import edu.utsa.cs3443.progresspal.model.QuoteHandler;
 import edu.utsa.cs3443.progresspal.model.Stats;
@@ -153,6 +154,11 @@ public class homeActivity extends AppCompatActivity {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         horizontalLayout.setBackgroundColor(Color.GREEN);
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         taskTracker.deleteTask(task);
                         rootLayout.removeView(horizontalLayout);
                     }
