@@ -1,10 +1,7 @@
 package edu.utsa.cs3443.progresspal.model;
 
 import android.app.Activity;
-import android.content.ContentProvider;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.util.Log;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,8 +16,10 @@ public class TaskTracker {
     private final ArrayList<Task> tasks;
     private final Activity activity;
     private final String filename;
+    private final Stats stats;
 
-    public TaskTracker(Activity activity) {
+    public TaskTracker(Activity activity, Stats stat) {
+        this.stats = stat;
         tasks = new ArrayList<>();
         this.activity = activity;
         filename = "tasks4.csv";
@@ -89,33 +88,16 @@ public class TaskTracker {
         }
     }
 
-
     public void addTasks(Task task){
         tasks.add(task);
     }
 
     public void deleteTask(Task task){
+        stats.setTotalXP(stats.getTotalXP() + task.getXp());
+        stats.setTasksCompleted(stats.getTasksCompleted()+1);
         tasks.remove(task);
+        stats.saveStats();
         saveTasks();
-        //deleteLineFromCSV(task.getName());
-    }
-
-    private void deleteLineFromCSV(String name) throws FileNotFoundException {
-        InputStream in = activity.openFileInput(filename);
-        ArrayList<String> linesToKeep = new ArrayList<>();
-        Scanner scan = new Scanner(in);
-
-        //read and copy the csv line by line with exception to the undesired one
-        scan.nextLine();
-        while(scan.hasNextLine()){
-            String line = scan.nextLine();
-            String[] tokens = line.split(",");
-            String name2 = tokens[0];
-
-            if(!name.equals(name2)){
-                linesToKeep.add(line);
-            }
-        }
     }
 
     public ArrayList<Task> getTasks(){

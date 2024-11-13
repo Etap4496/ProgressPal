@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +19,11 @@ public class pointsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_points);
 
-        TaskTracker taskTracker = homeActivity.getTaskTracker();
+        Stats stats = homeActivity.getStats();
+        stats.initializeStats();
 
-        loadXP(taskTracker);
-        loadMostTasksCompleted(taskTracker);
+        loadXP(stats);
+        loadMostTasksCompleted(stats);
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton creditButton = findViewById(R.id.credits_button);
@@ -63,14 +66,14 @@ public class pointsActivity extends AppCompatActivity {
 
     }
 
-    private void loadXP(TaskTracker taskTracker){
+    private void loadXP(Stats stats){
         TextView textXP = findViewById(R.id.pointsTotalXP);
-        textXP.setText(String.valueOf(taskTracker.getTotalXp()));
+        textXP.setText(String.valueOf(stats.getTotalXP()));
     }
 
-    private void loadMostTasksCompleted(TaskTracker taskTracker){
+    private void loadMostTasksCompleted(Stats stats) {
         TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
-        lifeTimeTasks.setText(String.valueOf(taskTracker.getTasks().size()));
+        lifeTimeTasks.setText(String.valueOf(stats.getTasksCompleted()));
     }
 
     private void launchProfile(){

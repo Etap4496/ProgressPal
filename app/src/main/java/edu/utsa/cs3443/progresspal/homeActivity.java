@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.progresspal.model.QuoteHandler;
+import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.Task;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
@@ -29,6 +30,7 @@ public class homeActivity extends AppCompatActivity {
 
     private QuoteHandler quoteHandler;
     private static TaskTracker taskTracker;
+    private static Stats stats;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,9 @@ public class homeActivity extends AppCompatActivity {
         //initializes the ArrayList of mascot quotes and loads them from the text file
         initQuotes();
         initTaskTracker();
+        initStats();
         taskTracker.initializeTasks();
+        stats.initializeStats();
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton pointButton = findViewById(R.id.points_button);
@@ -110,13 +114,21 @@ public class homeActivity extends AppCompatActivity {
         return taskTracker;
     }
 
+    public static Stats getStats() {
+        return stats;
+    }
+
     private void initQuotes(){
         quoteHandler = new QuoteHandler();
         quoteHandler.loadQuotes(this);
     }
 
     private void initTaskTracker(){
-        taskTracker = new TaskTracker(this);
+        taskTracker = new TaskTracker(this, stats);
+    }
+
+    private void initStats(){
+        stats = new Stats(this);
     }
 
     private void newTaskDynamicSetup(ArrayList<Task> tasks){
