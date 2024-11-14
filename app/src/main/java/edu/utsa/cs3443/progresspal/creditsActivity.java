@@ -34,6 +34,7 @@ public class creditsActivity extends AppCompatActivity {
         mathewGithub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent viewIntent = new Intent("android.intent.action.VIEW",
                         Uri.parse("https://github.com/mattyb8591"));
                 startActivity(viewIntent);

@@ -183,12 +183,6 @@ public class homeActivity extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
-                        horizontalLayout.setBackgroundColor(Color.GREEN);
-                        try {
-                            Thread.sleep(5000);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                        }
                         taskTracker.deleteTask(task);
                         rootLayout.removeView(horizontalLayout);
                     }
