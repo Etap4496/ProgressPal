@@ -23,8 +23,8 @@
         android:layout_height="50dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="24dp"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="26dp"
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <LinearLayout

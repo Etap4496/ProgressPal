@@ -65,8 +65,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         greenHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.green_hat;
                 if (stats.getTotalXP() > 400){
+                    hatImageResID = R.drawable.green_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -78,8 +78,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         blackHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.black_hat;
                 if (stats.getTotalXP() > 100){
+                    hatImageResID = R.drawable.black_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -91,8 +91,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         redHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.red_hat;
                 if (stats.getTotalXP() > 800){
+                    hatImageResID = R.drawable.red_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -104,8 +104,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         greenBlueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.green_blue_hat;
                 if (stats.getTotalXP() > 500){
+                    hatImageResID = R.drawable.green_blue_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -117,8 +117,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         purpleHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.purple_hat;
                 if (stats.getTotalXP() > 700){
+                    hatImageResID = R.drawable.purple_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -130,8 +130,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         blueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hatImageResID = R.drawable.blue_hat;
                 if (stats.getTotalXP() > 200){
+                    hatImageResID = R.drawable.blue_hat;
                     saveSelection("hat", hatImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -145,8 +145,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         greenStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                staffImageResID = R.drawable.green_staff;
                 if (stats.getTotalXP() > 300){
+                    staffImageResID = R.drawable.green_staff;
                     saveSelection("hat", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -158,8 +158,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         redStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                staffImageResID = R.drawable.red_staff;
                 if (stats.getTotalXP() > 900){
+                    staffImageResID = R.drawable.red_staff;
                     saveSelection("hat", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
@@ -171,8 +171,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         purpleStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                staffImageResID = R.drawable.purple_staff;
                 if (stats.getTotalXP() > 600){
+                    staffImageResID = R.drawable.purple_staff;
                     saveSelection("hat", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
