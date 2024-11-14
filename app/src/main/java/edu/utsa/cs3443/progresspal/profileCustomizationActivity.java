@@ -10,8 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.utsa.cs3443.progresspal.model.Stats;
 
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;
@@ -28,6 +31,9 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard);
         hatImageResID = sharedPreferences.getInt("hat", -1);  // Default to -1 if not set
         staffImageResID = sharedPreferences.getInt("staff", -1);  // Default to -1 if not set
+
+        Stats stats = homeActivity.getStats();
+        stats.initializeStats();
 
         Button backButton = findViewById(R.id.back_button);
 
@@ -60,42 +66,78 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.green_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 400){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         blackHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.black_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 100){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         redHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.red_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 800){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         greenBlueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.green_blue_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 500){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         purpleHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.purple_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 700){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         blueHatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hatImageResID = R.drawable.blue_hat;
-                saveSelection("hat", hatImageResID);
+                if (stats.getTotalXP() > 200){
+                    saveSelection("hat", hatImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -104,21 +146,39 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.green_staff;
-                saveSelection("staff", staffImageResID);
+                if (stats.getTotalXP() > 300){
+                    saveSelection("hat", staffImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         redStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.red_staff;
-                saveSelection("staff", staffImageResID);
+                if (stats.getTotalXP() > 900){
+                    saveSelection("hat", staffImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         purpleStaffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 staffImageResID = R.drawable.purple_staff;
-                saveSelection("staff", staffImageResID);
+                if (stats.getTotalXP() > 600){
+                    saveSelection("hat", staffImageResID);
+                    Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
