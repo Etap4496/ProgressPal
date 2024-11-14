@@ -12,26 +12,19 @@
         android:id="@+id/hat"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout_editor_absoluteY="16dp"
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
         android:id="@+id/staff"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="74dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/customize_button"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-        app:layout_constraintStart_toEndOf="@+id/mascot"
-        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="24dp"
         tools:srcCompat="@drawable/ic_launcher_background" />
 
     <LinearLayout
@@ -47,6 +40,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/LinearLayoutTopRight"
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -99,13 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="250dp"
-        android:layout_marginBottom="483dp"
+        android:layout_marginBottom="508dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:text="CUSTOMIZE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -117,8 +111,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textView6"
@@ -262,12 +258,16 @@
         android:id="@+id/mascot"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/customize_button"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hat"
-        app:layout_constraintVertical_bias="0.872"
+        app:layout_constraintTop_toBottomOf="@+id/staff"
+        app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
