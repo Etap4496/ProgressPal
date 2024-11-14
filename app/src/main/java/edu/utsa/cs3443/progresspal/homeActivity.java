@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -99,8 +100,17 @@ public class homeActivity extends AppCompatActivity {
         //when mascotQuoteButton is clicked the quote textView will display the next quote in the ArrayList of Quotes
         mascotQuoteButton.setOnClickListener(new View.OnClickListener() {
             int i = 0;
+            MediaPlayer mediaPlayer = null;
             @Override
             public void onClick(View view) {
+                if (mediaPlayer != null) {
+                    mediaPlayer.release();
+                }
+
+                mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.squeak);
+                mediaPlayer.setVolume(1.0f, 1.0f);
+                mediaPlayer.start();
+
                 if(i == quoteHandler.getQuotes().size()){
                     i = 0;
                 }
