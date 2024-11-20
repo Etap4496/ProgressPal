@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import edu.utsa.cs3443.progresspal.model.Task;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
@@ -39,22 +36,38 @@ public class newTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                TaskTracker taskTracker = homeActivity.getTaskTracker();
-                int completionTime = Integer.parseInt(String.valueOf(time.getText().toString()));
-                taskTracker.addTasks(new Task(taskName.getText().toString(), dueDate.getText().toString(), completionTime));
-                taskTracker.saveTasks();
-                launchCreateTask();
+                String timeString = time.getText().toString();
+
+                // Validate that the time entered is a number between 1 and 12
+                try {
+                    int completionTime = Integer.parseInt(timeString);
+
+                    if (completionTime > 24) {
+                        Toast.makeText(newTaskActivity.this, "I know you're lying...", Toast.LENGTH_SHORT).show();
+                    } else if (completionTime < 1 || completionTime > 12) {
+                        // Show a toast if the time is out of the range 1-12
+                        Toast.makeText(newTaskActivity.this, "Enter a number between 1-12", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Proceed with task creation if the time is valid
+                        TaskTracker taskTracker = homeActivity.getTaskTracker();
+                        taskTracker.addTasks(new Task(taskName.getText().toString(), dueDate.getText().toString(), completionTime));
+                        taskTracker.saveTasks();
+                        launchCreateTask();
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle case where the entered time is not a valid number
+                    Toast.makeText(newTaskActivity.this, "Enter a valid number between 1-12", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-
-    private void launchCancel(){
+    private void launchCancel() {
         Intent intentCancel = new Intent(this, homeActivity.class);
         startActivity(intentCancel);
     }
 
-    private void launchCreateTask(){
+    private void launchCreateTask() {
         Intent intentCreate = new Intent(this, homeActivity.class);
         startActivity(intentCreate);
     }

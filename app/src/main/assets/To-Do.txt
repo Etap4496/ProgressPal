@@ -1,0 +1,17 @@
+To-DO
+
+
+Critical
+-Colors on mascot (keep selection)
+-Blank/No hat staff option
+-README File
+
+Goal
+-Amount of XP till next unlock
+-Rounded nav bar, darker icon to show selected
+-Login/account system
+
+
+Optional
+-Sound on everything
+-add music in background
