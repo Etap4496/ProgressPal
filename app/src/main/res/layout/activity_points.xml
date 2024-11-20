@@ -85,25 +85,38 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="666dp"
-        android:layout_marginStart="1dp"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:background="#03A9F4"
+            android:paddingTop="10dp"
+            android:text="POINTS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
         <FrameLayout
-            android:layout_width="300dp"
-            android:layout_height="200dp">
+            android:layout_width="375dp"
+            android:layout_height="250dp"
+            android:background="@color/light_primary">
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:translationX="75dp"
+                android:translationX="112dp"
                 android:translationY="50dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
@@ -112,6 +125,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:rotation="-45"
+                android:translationX="37dp"
                 android:translationY="90dp"
                 tools:srcCompat="@drawable/ic_launcher_background" />
 
@@ -119,76 +133,84 @@
                 android:id="@+id/imageView10"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:translationX="65dp"
+                android:translationX="107dp"
                 android:translationY="35dp"
                 tools:srcCompat="@drawable/ic_launcher_background" />
         </FrameLayout>
 
-        <TextView
-            android:id="@+id/textView8_xpLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="match_parent"
+            android:background="@color/light_primary"
             android:gravity="center"
-            android:text="Total XP"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/pointsTotalXP"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="30dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="" />
+            <TextView
+                android:id="@+id/textView8_xpLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#03A9F4"
+                android:gravity="center"
+                android:text="Total XP"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textViewXPNeeded"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="XP Needed For Next Unlock"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/pointsTotalXP"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="" />
 
-        <TextView
-            android:id="@+id/xpNeeded"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="30dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="" />
+            <TextView
+                android:id="@+id/textViewXPNeeded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#03A9F4"
+                android:gravity="center"
+                android:text="XP Needed For Next Unlock"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tasksaccomp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="Lifetime Tasks Completed:"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/xpNeeded"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="" />
 
-        <TextView
-            android:id="@+id/lifetime_tasks"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="30dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="" />
+            <TextView
+                android:id="@+id/tasksaccomp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#03A9F4"
+                android:gravity="center"
+                android:text="Lifetime Tasks Completed:"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/lifetime_tasks"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="" />
+        </LinearLayout>
 
     </LinearLayout>
 
