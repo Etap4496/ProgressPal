@@ -147,7 +147,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             public void onClick(View view) {
                 if (stats.getTotalXP() > 300){
                     staffImageResID = R.drawable.green_staff;
-                    saveSelection("hat", staffImageResID);
+                    saveSelection("staff", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -160,7 +160,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             public void onClick(View view) {
                 if (stats.getTotalXP() > 900){
                     staffImageResID = R.drawable.red_staff;
-                    saveSelection("hat", staffImageResID);
+                    saveSelection("staff", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -173,7 +173,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             public void onClick(View view) {
                 if (stats.getTotalXP() > 600){
                     staffImageResID = R.drawable.purple_staff;
-                    saveSelection("hat", staffImageResID);
+                    saveSelection("staff", staffImageResID);
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
