@@ -25,14 +25,30 @@ public class pointsActivity extends AppCompatActivity {
         int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
         int hatImageResID = sharedPreferences.getInt("hat", -1); // Default to -1 if no hat is selected
         int staffImageResID = sharedPreferences.getInt("staff", -1); // Default to -1 if no staff is selected
-
+        int noHat = sharedPreferences.getInt("noStaff", -2);
+        int noStaff = sharedPreferences.getInt("noHat", -2);
         // Update UI elements
         ImageView mascotImageView = findViewById(R.id.imageView2);
         ImageView hatImageView = findViewById(R.id.imageView10);
         ImageView staffImageView = findViewById(R.id.imageView13);
 
+
+        ImageButton profileButton = findViewById(R.id.profile_button);
+        ImageButton creditButton = findViewById(R.id.credits_button);
+        ImageButton homeButton = findViewById(R.id.home_button);
+        ImageView mascotView = findViewById((R.id.imageView2));
+        ImageView hatView = findViewById((R.id.imageView10));
+        ImageView staffView = findViewById((R.id.imageView13));
+
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
+
+        /*if (noHat != -2){
+            hatImageView.setImageDrawable(null);
+        }
+        if (noStaff != -2){
+            staffImageView.setImageDrawable(null);
+        }*/
 
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
@@ -57,12 +73,6 @@ public class pointsActivity extends AppCompatActivity {
         loadMostTasksCompleted(stats);
         loadxpNeeded(stats);
 
-        ImageButton profileButton = findViewById(R.id.profile_button);
-        ImageButton creditButton = findViewById(R.id.credits_button);
-        ImageButton homeButton = findViewById(R.id.home_button);
-        ImageView mascotView = findViewById((R.id.imageView2));
-        ImageView hatView = findViewById((R.id.imageView10));
-        ImageView staffView = findViewById((R.id.imageView13));
 
         if (profileCustomizationActivity.ImageResID != -1) {
             mascotView.setImageResource(profileCustomizationActivity.ImageResID);
@@ -73,6 +83,14 @@ public class pointsActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
+        /*if (profileCustomizationActivity.noHatImageResID != -2) {
+            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
+            hatView.setImageDrawable(null);
+        }
+        if (profileCustomizationActivity.noStaffImageResID != -2) {
+            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
+            staffView.setImageDrawable(null);
+        }*/
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
