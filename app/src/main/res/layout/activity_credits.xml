@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7F1F4"
+    android:backgroundTint="@color/background_color"
     tools:context=".creditsActivity">
 
 
@@ -26,166 +27,250 @@
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/primary_color"
-            app:srcCompat="@drawable/home_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="@color/primary_color"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home_nav_icon" />
 
         <ImageButton
             android:id="@+id/points_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/xp_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/xp_nav_icon" />
 
         <ImageButton
             android:id="@+id/profile_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/profile_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/profile_nav_icon" />
 
         <ImageButton
             android:id="@+id/credits_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/settings_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings_nav_icon" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="150dp"
-        android:layout_height="550dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="409dp"
+        android:layout_height="670dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/background_color"
+        android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="50dp"
-            android:rotationY="180"
-            app:srcCompat="@drawable/green_lizard" />
-
-        <Button
-            android:id="@+id/mathew_github"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/primary_color"
-            android:text="@string/github_mathew"
-            android:textSize="12sp" />
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/textView22"
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Developer"
-            android:textAlignment="center" />
+            android:background="#B7F2FB"
+            android:paddingTop="10dp"
+            android:text="SETTINGS"
+            android:textAlignment="center"
+            android:textSize="40sp" />
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:rotationY="180"
-            app:srcCompat="@drawable/pink_lizard" />
-
-        <Button
-            android:id="@+id/marc_github"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/primary_color"
-            android:text="@string/github_marc"
-            android:textSize="12sp" />
+            android:layout_height="150dp"
+            android:background="@color/background_color"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/music_switch"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Music"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/sfx_switch"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Sound Effects"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/notifications_switch"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/textView24"
-            android:layout_width="match_parent"
+            android:id="@+id/textView8"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Developer"
-            android:textAlignment="center" />
+            android:background="#B7F2FB"
+            android:paddingTop="10dp"
+            android:text="CREDITS"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:rotationY="180"
+                    app:srcCompat="@drawable/pink_lizard" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eli Tapia"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAlignment="viewStart" />
+
+                <Button
+                    android:id="@+id/eli_github"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/github_eli"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:rotationY="180"
+                    app:srcCompat="@drawable/green_lizard" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marc Jabian"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/marc_github"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/github_marc"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
+                    app:srcCompat="@drawable/blue_lizard" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mathew Robillard"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/mathew_github"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/github_mathew"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/red_lizard" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leslie Henley"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/leslie_github"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/github_Leslie"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="150dp"
-        android:layout_height="550dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574">
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:srcCompat="@drawable/red_lizard" />
-
-        <Button
-            android:id="@+id/eli_github"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/primary_color"
-            android:text="@string/github_eli"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Developer"
-            android:textAlignment="center" />
-
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-
-            app:srcCompat="@drawable/blue_lizard" />
-
-        <Button
-            android:id="@+id/leslie_github"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/primary_color"
-            android:text="@string/github_Leslie"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Developer"
-            android:textAlignment="center" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="CREDITS"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
