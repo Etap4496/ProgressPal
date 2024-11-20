@@ -25,7 +25,8 @@ public class profileActivity extends AppCompatActivity {
         int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
         int hatImageResID = sharedPreferences.getInt("hat", -1); // Default to -1 if no hat is selected
         int staffImageResID = sharedPreferences.getInt("staff", -1); // Default to -1 if no staff is selected
-
+        int noHatImageResID = sharedPreferences.getInt("noHat", -2);
+        int noStaffImageResID = sharedPreferences.getInt("noStaff", -2);
         // Update UI elements
         ImageView mascotImageView = findViewById(R.id.mascot);
         ImageView hatImageView = findViewById(R.id.hat);
@@ -34,6 +35,15 @@ public class profileActivity extends AppCompatActivity {
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
 
+        if (noHatImageResID != -2){
+            hatImageView.setVisibility(View.GONE);
+            hatImageView.setImageResource(noHatImageResID);
+        }
+
+        if (noStaffImageResID != -2){
+            staffImageView.setVisibility(View.GONE);
+            staffImageView.setImageResource(noStaffImageResID);
+        }
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
             hatImageView.setImageResource(hatImageResID);

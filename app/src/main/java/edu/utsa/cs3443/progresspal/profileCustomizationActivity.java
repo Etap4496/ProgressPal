@@ -20,6 +20,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     public static int ImageResID = -1;
     public static int hatImageResID = -1;
     public static int staffImageResID = -1;
+    public static int noHatImageResID = -2;
+    public static int noStaffImageResID = -2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,10 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
         ImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard);
         hatImageResID = sharedPreferences.getInt("hat", -1);  // Default to -1 if not set
-        staffImageResID = sharedPreferences.getInt("staff", -1);  // Default to -1 if not set
+        staffImageResID = sharedPreferences.getInt("staff", -1);// Default to -1 if not set
+        noHatImageResID = sharedPreferences.getInt("noHat", -2);
+        noStaffImageResID = sharedPreferences.getInt("noHat", -2);
+
 
         Stats stats = homeActivity.getStats();
         stats.initializeStats();
@@ -47,6 +52,9 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageButton redStaffButton = findViewById(R.id.red_staff);
         ImageButton purpleStaffButton = findViewById(R.id.purple_staff);
 
+        ImageButton noHat = findViewById(R.id.no_hat);
+        ImageButton noStaff = findViewById(R.id.no_staff);
+
         Spinner spinnerColors = findViewById(R.id.mascot_colors);
         spinnerColors.setOnItemSelectedListener(this);
         String[] colors = getResources().getStringArray(R.array.mascot_colors);
@@ -58,6 +66,24 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View view) {
                 launchBack();
+            }
+        });
+
+        noHat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noHatImageResID = R.drawable.output_onlinepngtools;
+                saveSelection("hat", hatImageResID);
+                Toast.makeText(view.getContext(), "No hat selected", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        noStaff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noStaffImageResID = R.drawable.output_onlinepngtools;
+                saveSelection("staff", staffImageResID);
+                Toast.makeText(view.getContext(), "No staff selected", Toast.LENGTH_SHORT).show();
             }
         });
 
