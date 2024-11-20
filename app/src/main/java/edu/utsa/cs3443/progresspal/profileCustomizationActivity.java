@@ -34,7 +34,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         hatImageResID = sharedPreferences.getInt("hat", -1);  // Default to -1 if not set
         staffImageResID = sharedPreferences.getInt("staff", -1);// Default to -1 if not set
         noHatImageResID = sharedPreferences.getInt("noHat", -2);
-        noStaffImageResID = sharedPreferences.getInt("noHat", -2);
+        noStaffImageResID = sharedPreferences.getInt("noStaff", -2);
 
 
         Stats stats = homeActivity.getStats();
@@ -69,11 +69,11 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             }
         });
 
-        noHat.setOnClickListener(new View.OnClickListener() {
+       /* noHat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                noHatImageResID = R.drawable.output_onlinepngtools;
-                saveSelection("hat", hatImageResID);
+                noHatImageResID = R.drawable.ic_launcher_background;
+                saveSelection("noHat", noHatImageResID);
                 Toast.makeText(view.getContext(), "No hat selected", Toast.LENGTH_SHORT).show();
             }
         });
@@ -81,11 +81,11 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         noStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                noStaffImageResID = R.drawable.output_onlinepngtools;
-                saveSelection("staff", staffImageResID);
+                noStaffImageResID = R.drawable.ic_launcher_background;
+                saveSelection("noStaff", noStaffImageResID);
                 Toast.makeText(view.getContext(), "No staff selected", Toast.LENGTH_SHORT).show();
             }
-        });
+        }); */
 
         // Save each hat selection to SharedPreferences
         greenHatButton.setOnClickListener(new View.OnClickListener() {

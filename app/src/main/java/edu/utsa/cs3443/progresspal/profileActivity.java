@@ -8,12 +8,21 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.progresspal.model.Stats;
 
 public class profileActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +34,8 @@ public class profileActivity extends AppCompatActivity {
         int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
         int hatImageResID = sharedPreferences.getInt("hat", -1); // Default to -1 if no hat is selected
         int staffImageResID = sharedPreferences.getInt("staff", -1); // Default to -1 if no staff is selected
-        int noHatImageResID = sharedPreferences.getInt("noHat", -2);
-        int noStaffImageResID = sharedPreferences.getInt("noStaff", -2);
+        int noHat= sharedPreferences.getInt("noHat", -2);
+        int noStaff = sharedPreferences.getInt("noStaff", -2);
         // Update UI elements
         ImageView mascotImageView = findViewById(R.id.mascot);
         ImageView hatImageView = findViewById(R.id.hat);
@@ -35,20 +44,19 @@ public class profileActivity extends AppCompatActivity {
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
 
-        if (noHatImageResID != -2){
-            hatImageView.setVisibility(View.GONE);
-            hatImageView.setImageResource(noHatImageResID);
+        /*if (noHat != -2){
+            hatImageView.setImageDrawable(null);
         }
+        if (noStaff != -2){
+            staffImageView.setImageDrawable(null);
+        } */
 
-        if (noStaffImageResID != -2){
-            staffImageView.setVisibility(View.GONE);
-            staffImageView.setImageResource(noStaffImageResID);
-        }
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
             hatImageView.setImageResource(hatImageResID);
             hatImageView.setVisibility(View.VISIBLE); // Ensure visibility
-        } else {
+        }
+        else {
             hatImageView.setVisibility(View.GONE); // Hide if no hat is selected
         }
 
@@ -82,6 +90,15 @@ public class profileActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
+        /*if (profileCustomizationActivity.noHatImageResID != -2) {
+            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
+            hatView.setImageDrawable(null);
+        }
+        if (profileCustomizationActivity.noStaffImageResID != -2) {
+            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
+            staffView.setImageDrawable(null);
+        } */
+
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

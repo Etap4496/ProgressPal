@@ -44,7 +44,8 @@ public class homeActivity extends AppCompatActivity {
         int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
         int hatImageResID = sharedPreferences.getInt("hat", -1);
         int staffImageResID = sharedPreferences.getInt("staff", -1);
-
+        int noHat= sharedPreferences.getInt("noHat", -2);
+        int noStaff = sharedPreferences.getInt("noStaff", -2);
         // Update UI elements
         ImageView mascotImageView = findViewById(R.id.mascot_quote_button);
         ImageView hatImageView = findViewById(R.id.hat_image);
@@ -53,6 +54,13 @@ public class homeActivity extends AppCompatActivity {
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
 
+
+        /*if (noHat != -2){
+            hatImageView.setImageDrawable(null);
+        }
+        if (noStaff != -2){
+            staffImageView.setImageDrawable(null);
+        }*/
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
             hatImageView.setImageResource(hatImageResID);
@@ -93,6 +101,14 @@ public class homeActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
+        /*if (profileCustomizationActivity.noHatImageResID != -2) {
+            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
+            hatView.setImageDrawable(null);
+        }
+        if (profileCustomizationActivity.noStaffImageResID != -2) {
+            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
+            staffView.setImageDrawable(null);
+        }*/
 
         ImageButton mascotQuoteButton = findViewById(R.id.mascot_quote_button);
         TextView mascotQuoteText = findViewById(R.id.mascot_quote);
