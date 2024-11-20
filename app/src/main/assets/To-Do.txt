@@ -3,7 +3,6 @@ To-DO
 
 Critical
 -Colors on mascot (keep selection)
--Max hours?
 -Blank/No hat staff option
 -README File
 
