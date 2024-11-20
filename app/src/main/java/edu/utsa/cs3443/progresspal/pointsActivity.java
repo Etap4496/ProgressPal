@@ -52,8 +52,10 @@ public class pointsActivity extends AppCompatActivity {
         Stats stats = homeActivity.getStats();
         stats.initializeStats();
 
+
         loadXP(stats);
         loadMostTasksCompleted(stats);
+        loadxpNeeded(stats);
 
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton creditButton = findViewById(R.id.credits_button);
@@ -104,6 +106,11 @@ public class pointsActivity extends AppCompatActivity {
     private void loadMostTasksCompleted(Stats stats) {
         TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
         lifeTimeTasks.setText(String.valueOf(stats.getTasksCompleted()));
+    }
+
+    private void loadxpNeeded(Stats stats) {
+        TextView textXPNeeded = findViewById(R.id.xpNeeded);
+        textXPNeeded.setText(String.valueOf((stats.getTotalXP() - (stats.getTotalXP()%200))+200));
     }
 
     private void launchProfile(){
