@@ -33,7 +33,7 @@
                 android:layout_width="300dp"
                 android:layout_height="67dp"
                 android:background="#03A9F4"
-                android:paddingTop="10dp"
+                android:paddingTop="20dp"
                 android:text="CUSTOMIZATION"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -131,28 +131,28 @@
                                 android:id="@+id/no_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@android:drawable/ic_delete" />
 
                             <ImageButton
                                 android:id="@+id/blue_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/blue_hat" />
 
                             <ImageButton
                                 android:id="@+id/green_blue_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/green_blue_hat" />
 
                             <ImageButton
                                 android:id="@+id/red_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/red_hat" />
                         </LinearLayout>
 
@@ -166,21 +166,21 @@
                                 android:id="@+id/black_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/black_hat" />
 
                             <ImageButton
                                 android:id="@+id/green_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/green_hat" />
 
                             <ImageButton
                                 android:id="@+id/purple_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:backgroundTint="@color/white"
+                                android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/purple_hat" />
 
                         </LinearLayout>
@@ -224,14 +224,14 @@
                             android:id="@+id/no_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="#84DAFB"
                             app:srcCompat="@android:drawable/ic_delete" />
 
                         <ImageButton
                             android:id="@+id/purple_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/purple_staff" />
 
                     </LinearLayout>
@@ -246,14 +246,14 @@
                             android:id="@+id/green_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/green_staff" />
 
                         <ImageButton
                             android:id="@+id/red_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/red_staff" />
 
                     </LinearLayout>
@@ -279,7 +279,7 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/confirm_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/primary_color"
