@@ -12,101 +12,103 @@
 
     <LinearLayout
         android:id="@+id/new_task_LL"
-        android:layout_width="408dp"
-        android:layout_height="878dp"
-        android:background="@color/light_primary"
-        android:backgroundTint="@color/light_primary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/background_color"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/newTask_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="40dp"
-            android:text="@string/new_task"
-            android:textAlignment="center"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/enter_task_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Task Name"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:paddingTop="25dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="25dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/enter_due_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Due Date (MM/DD/YY)"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:paddingTop="25dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="25dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/enter_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Time (hr)"
-            android:inputType="number"
-            android:paddingLeft="15dp"
-            android:paddingTop="25dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="25dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/button_horizontal_layout"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingTop="340dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="20dp">
+            android:background="@color/light_primary"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/cancel_button"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="@string/cancel_button"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/newTask_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_color"
+                android:paddingTop="10dp"
+                android:text="@string/new_task"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/create_button"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:paddingBottom="6dp"
-                android:text="@string/create_button"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+            <EditText
+                android:id="@+id/enter_task_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Task Name"
+                android:inputType="text"
+                android:paddingTop="150dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/enter_due_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Due Date (MM/DD/YY)"
+                android:inputType="text"
+                android:paddingTop="50dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/enter_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Time (hr)"
+                android:inputType="number"
+                android:paddingTop="50dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/button_horizontal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="bottom|center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/cancel_button"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/create_button"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary_color"
+                    android:paddingBottom="6dp"
+                    android:text="@string/create_button"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
