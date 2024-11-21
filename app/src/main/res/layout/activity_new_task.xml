@@ -34,13 +34,13 @@
             <TextView
                 android:id="@+id/newTask_header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:background="@color/primary_color"
                 android:paddingTop="10dp"
-                android:text="@string/new_task"
+                android:text="NEW TASK"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
 
             <EditText

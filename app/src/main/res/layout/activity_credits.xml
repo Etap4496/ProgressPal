@@ -70,6 +70,7 @@
         android:background="@color/background_color"
         android:gravity="center|top"
         android:orientation="vertical"
+        android:paddingTop="20dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -80,7 +81,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="375dp"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:background="#03A9F4"
             android:paddingTop="10dp"
             android:text="SETTINGS"
@@ -127,7 +128,8 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="375dp"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
             android:background="#03A9F4"
             android:paddingTop="10dp"
             android:text="CREDITS"
