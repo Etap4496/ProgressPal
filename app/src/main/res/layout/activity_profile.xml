@@ -9,106 +9,6 @@
     tools:context=".profileActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="100dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="STATISTICS"
-            android:textSize="30dp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="BUDDY AGE"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="6 day(s)"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="TASKS ACCOMPLISHED"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tasksaccomp"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="37"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="LONGEST DAILY STREAK"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="1 day(s)"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:text="MOST TASKS COMPLETED IN A DAY"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="2"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="340dp"
         android:layout_height="65dp"
@@ -116,159 +16,281 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/home_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/primary_color"
-            app:srcCompat="@drawable/home_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="@color/primary_color"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home_nav_icon" />
 
         <ImageButton
             android:id="@+id/points_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/xp_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/xp_nav_icon" />
 
         <ImageButton
             android:id="@+id/profile_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/profile_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/profile_nav_icon" />
 
         <ImageButton
             android:id="@+id/credits_button"
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/settings_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="#03A9F4"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings_nav_icon" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="225dp"
-        android:layout_height="248dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center|top"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/mascot"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/staff"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:rotation="-45"
-                android:translationX="32dp"
-                android:translationY="65dp"
-                tools:srcCompat="@drawable/ic_launcher_background" />
-
-            <ImageView
-                android:id="@+id/hat"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@android:color/transparent"
-
-                android:translationX="60dp"
-                android:translationY="18dp"
-                tools:srcCompat="@drawable/ic_launcher_background" />
-        </FrameLayout>
-
-        <Button
-            android:id="@+id/customize_button"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="375dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="CUSTOMIZE" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="183dp"
-        android:layout_height="248dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout5"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
+            android:background="#03A9F4"
             android:gravity="center"
-            android:text="NAME"
+            android:paddingTop="10dp"
+            android:text="PROFILE"
+            android:textColor="@color/white"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Scooter jr."
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="225dp"
+            android:gravity="center|top"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@android:drawable/btn_default"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:justificationMode="none"
-            android:text="DOB"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="200dp"
+                android:layout_height="225dp"
+                android:background="@color/light_primary"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/mascot"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/staff"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:rotation="-45"
+                        android:translationX="17dp"
+                        android:translationY="65dp"
+                        tools:srcCompat="@drawable/ic_launcher_background" />
+
+                    <ImageView
+                        android:id="@+id/hat"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@android:color/transparent"
+
+                        android:translationX="45dp"
+                        android:translationY="20dp"
+                        tools:srcCompat="@drawable/ic_launcher_background" />
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/customize_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#03A9F4"
+                    android:text="CUSTOMIZE"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@color/light_primary"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_default"
+                    android:backgroundTint="#4BCBFF"
+                    android:gravity="center"
+                    android:text="NAME"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Scooter jr."
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_default"
+                    android:backgroundTint="#4BCBFF"
+                    android:gravity="center"
+                    android:justificationMode="none"
+                    android:text="DOB"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="10/9/2024"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="375dp"
+            android:layout_height="match_parent"
+            android:background="@color/light_primary"
             android:gravity="center"
-            android:text="10/9/2024"
-            android:textStyle="bold" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="#03A9F4"
+                android:gravity="center"
+                android:text="STATISTICS"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#4BCBFF"
+                android:gravity="center"
+                android:text="BUDDY AGE"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="6 day(s)"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#4BCBFF"
+                android:gravity="center"
+                android:text="TASKS ACCOMPLISHED"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tasksaccomp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="37"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#4BCBFF"
+                android:gravity="center"
+                android:text="LONGEST DAILY STREAK"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="1 day(s)"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_default"
+                android:backgroundTint="#4BCBFF"
+                android:gravity="center"
+                android:text="MOST TASKS COMPLETED IN A DAY"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="2"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
