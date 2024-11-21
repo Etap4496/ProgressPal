@@ -149,24 +149,25 @@
                     android:background="@null"
                     android:scaleType="fitCenter"
                     android:translationX="125dp"
+                    android:translationY="10dp"
                     tools:srcCompat="@tools:sample/avatars[0]" />
 
                 <ImageView
                     android:id="@+id/staff_image"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:rotation="-45"
-                    android:translationX="80dp"
-                    android:translationY="40dp"
+                    android:translationX="75dp"
+                    android:translationY="45dp"
                     tools:srcCompat="@drawable/ic_launcher_background" />
 
                 <ImageView
                     android:id="@+id/hat_image"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
 
                     android:background="@android:color/transparent"
-                    android:translationX="122dp"
+                    android:translationX="117dp"
                     tools:srcCompat="@drawable/ic_launcher_background" />
 
             </FrameLayout>

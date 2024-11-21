@@ -118,13 +118,13 @@
 
                     <ImageView
                         android:id="@+id/staff"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:rotation="-45"
-                        android:translationX="17dp"
-                        android:translationY="65dp"
+                        android:translationX="11dp"
+                        android:translationY="55dp"
                         tools:srcCompat="@drawable/ic_launcher_background" />
 
                     <ImageView
@@ -171,6 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
+                    android:paddingBottom="10dp"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -191,6 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center"
+                    android:paddingBottom="10dp"
                     android:text="10/9/2024"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -237,6 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
+                android:paddingBottom="10dp"
                 android:text="6 day(s)"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -258,6 +261,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
+                android:paddingBottom="10dp"
                 android:text="37"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -279,6 +283,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
+                android:paddingBottom="10dp"
                 android:text="1 day(s)"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -300,6 +305,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
+                android:paddingBottom="10dp"
                 android:text="2"
                 android:textSize="20sp"
                 android:textStyle="bold" />
