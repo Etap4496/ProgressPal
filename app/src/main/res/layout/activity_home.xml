@@ -26,7 +26,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/primary_color"
+            android:backgroundTint="@color/dark_primary"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/home_nav_icon" />
 

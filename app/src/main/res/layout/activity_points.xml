@@ -46,10 +46,10 @@
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            app:srcCompat="@drawable/xp_nav_icon"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"/>
+            android:backgroundTint="@color/dark_primary"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/xp_nav_icon" />
 
         <ImageButton
             android:id="@+id/profile_button"

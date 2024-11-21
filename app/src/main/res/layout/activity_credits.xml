@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:backgroundTint="#03A9F4"
+            android:backgroundTint="@color/dark_primary"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/settings_nav_icon" />
     </LinearLayout>
