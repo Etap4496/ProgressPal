@@ -8,49 +8,17 @@
     android:background="#D7F1F4"
     tools:context=".homeActivity">
 
-    <ScrollView
-        android:id="@+id/tasks_scroll_view"
-        android:layout_width="405dp"
-        android:layout_height="380dp"
-        android:background="#D7F1F4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:id="@+id/tasks_root_LL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
-    <Button
-        android:id="@+id/new_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/primary_color"
-        android:text="@string/new_task_button"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.687" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="340dp"
         android:layout_height="65dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ImageButton
             android:id="@+id/home_button"
@@ -93,63 +61,110 @@
             app:srcCompat="@drawable/settings_nav_icon" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/mascot_quote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:backgroundTint="@color/background_color"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasks_scroll_view"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/mascot_quote" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/mascot_quote_button"
-        android:layout_width="138dp"
-        android:layout_height="122dp"
-        android:adjustViewBounds="true"
-        android:backgroundTint="@color/background_color"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/staff_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
-        android:rotation="-45"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#03A9F4"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="TASKS"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/hat_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@android:color/transparent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:background="@color/light_primary"
+                android:gravity="center|top"
+                android:orientation="vertical">
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+                <ScrollView
+                    android:id="@+id/tasks_scroll_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:background="@color/light_primary">
+
+                    <LinearLayout
+                        android:id="@+id/tasks_root_LL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/new_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="@string/new_task_button"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mascot_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:backgroundTint="@color/background_color"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@string/mascot_quote" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp">
+
+                <ImageButton
+                    android:id="@+id/mascot_quote_button"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:adjustViewBounds="true"
+                    android:backgroundTint="@color/background_color"
+                    android:scaleType="fitCenter"
+                    android:translationX="125dp"
+                    tools:srcCompat="@drawable/ic_launcher_background" />
+
+                <ImageView
+                    android:id="@+id/staff_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:rotation="-45"
+                    android:translationX="80dp"
+                    android:translationY="30dp"
+                    tools:srcCompat="@drawable/ic_launcher_background" />
+
+                <ImageView
+                    android:id="@+id/hat_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+
+                    android:background="@android:color/transparent"
+                    android:translationX="130dp"
+                    tools:srcCompat="@drawable/ic_launcher_background" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

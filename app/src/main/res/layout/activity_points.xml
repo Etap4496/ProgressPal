@@ -122,7 +122,7 @@
                 android:id="@+id/imageView10"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:translationX="107dp"
+                android:translationX="105dp"
                 android:translationY="35dp"
                 tools:srcCompat="@drawable/ic_launcher_background" />
         </FrameLayout>
