@@ -1,14 +1,31 @@
 package edu.utsa.cs3443.progresspal.model;
 
+import android.app.Activity;
+import android.content.Context;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
+
 public class Mascot {
+
     private String name;
     private String DOB;
     private Inventory inventory;
+    private final String mascotFile;
+    private Activity activity;
 
     public Mascot(String name, String DOB) {
         this.name = name;
         this.DOB = DOB;
         inventory = new Inventory();
+        this.activity = activity;
+        this.mascotFile = "mascot.csv";
+    }
+
+    public String getFileName(){
+        return mascotFile;
     }
 
     public String getName() {

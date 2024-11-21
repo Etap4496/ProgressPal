@@ -17,12 +17,14 @@ public class TaskTracker {
     private final Activity activity;
     private final String filename;
     private final Stats stats;
+    private Mascot mascot;
 
     public TaskTracker(Activity activity, Stats stat) {
         this.stats = stat;
         tasks = new ArrayList<>();
         this.activity = activity;
         filename = "tasks4.csv";
+        this.mascot = new Mascot("", "");
     }
 
     public void initializeTasks(){
@@ -48,6 +50,27 @@ public class TaskTracker {
         }
     }
 
+    public String initializeName() {
+        try{
+            System.out.println("Attempting to read from file...");
+            InputStream in = activity.openFileInput(mascot.getFileName());
+            System.out.println("Success");
+            return loadName(in);
+        }
+        catch(FileNotFoundException e){
+
+            System.out.println("unable to read from file. File does not exist. " + mascot.getFileName());
+
+            try{
+                System.out.println("Attempting to create file ...");
+                OutputStream out = activity.openFileOutput(mascot.getFileName(), Context.MODE_PRIVATE);
+            }
+            catch(FileNotFoundException e2){
+                System.out.println("Unable to create file. " + mascot.getFileName());
+            }
+        }
+        return null;
+    }
     public void loadTasks(InputStream in){
 
         if(in != null){
@@ -62,6 +85,21 @@ public class TaskTracker {
                 addTasks(new Task(tokens[0], tokens[1], completionTime));
             }
         }
+    }
+
+    public String loadName(InputStream in){
+
+        if(in != null){
+            Scanner scan = new Scanner(in);
+            String mascotName;
+
+            while(scan.hasNextLine()){
+                mascotName = scan.nextLine();
+                mascot.setName(mascotName);
+            }
+        }
+
+        return mascot.getName();
     }
 
     public void saveTasks() {
@@ -88,6 +126,23 @@ public class TaskTracker {
         }
     }
 
+    public void saveName(String name) {
+
+        try{
+            System.out.println("Attempting to save to a file");
+            OutputStream out = activity.openFileOutput(mascot.getFileName(), Context.MODE_PRIVATE);
+
+            if(mascot != null) {
+                    out.write(name.getBytes(StandardCharsets.UTF_8));
+            }
+            out.close();
+            System.out.println("Name saved to csv file!");
+        }
+        catch(IOException e){
+            System.out.println("Failed to write to file. " + mascot.getFileName());
+        }
+    }
+
     public void addTasks(Task task){
         tasks.add(task);
     }
@@ -104,6 +159,9 @@ public class TaskTracker {
         return tasks;
     }
 
+    public Mascot getMascot(){
+        return mascot;
+    }
 
 //tallies up the total xp, called from pointsActivity
     public int getTotalXp() {

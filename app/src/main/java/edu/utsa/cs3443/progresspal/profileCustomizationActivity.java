@@ -8,13 +8,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.progresspal.model.Mascot;
 import edu.utsa.cs3443.progresspal.model.Stats;
+import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;
@@ -22,6 +25,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     public static int staffImageResID = -1;
     public static int noHatImageResID = -2;
     public static int noStaffImageResID = -2;
+
+    private static TaskTracker taskTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         stats.initializeStats();
 
         Button backButton = findViewById(R.id.back_button);
+        Button confirmButton = findViewById(R.id.confirm_button);
 
         ImageButton blackHatButton = findViewById(R.id.black_hat);
         ImageButton greenHatButton = findViewById(R.id.green_hat);
@@ -51,9 +57,10 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         ImageButton greenStaffButton = findViewById(R.id.green_staff);
         ImageButton redStaffButton = findViewById(R.id.red_staff);
         ImageButton purpleStaffButton = findViewById(R.id.purple_staff);
-
         ImageButton noHat = findViewById(R.id.no_hat);
         ImageButton noStaff = findViewById(R.id.no_staff);
+
+        taskTracker = homeActivity.getTaskTracker();
 
         Spinner spinnerColors = findViewById(R.id.mascot_colors);
         spinnerColors.setOnItemSelectedListener(this);
@@ -62,9 +69,24 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         adapter.setDropDownViewResource(androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item);
         spinnerColors.setAdapter(adapter);
 
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText changeName = (EditText)findViewById(R.id.change_name);
+                String changeNameText = changeName.getText().toString();
+
+                Toast.makeText(view.getContext(), "Mascot Name Changed" , Toast.LENGTH_LONG).show();
+                System.out.println("Name changed to " + changeNameText);
+
+                //write change to csv file
+                taskTracker.saveName(changeNameText);
+            }
+        });
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 launchBack();
             }
         });
@@ -208,6 +230,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
             }
         });
     }
+
 
     private void launchBack(){
         Intent intentBack = new Intent(this, profileActivity.class);
