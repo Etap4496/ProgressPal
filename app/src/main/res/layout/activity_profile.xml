@@ -102,6 +102,14 @@
                     android:layout_gravity="center">
 
                     <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="170dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:translationX="15dp"
+                        app:srcCompat="@drawable/background" />
+
+                    <ImageView
                         android:id="@+id/mascot"
                         android:layout_width="100dp"
                         android:layout_height="100dp"

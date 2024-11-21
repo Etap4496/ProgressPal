@@ -132,17 +132,24 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp">
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/background" />
 
                 <ImageButton
                     android:id="@+id/mascot_quote_button"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
                     android:adjustViewBounds="true"
-                    android:backgroundTint="@color/background_color"
+                    android:background="@null"
                     android:scaleType="fitCenter"
                     android:translationX="125dp"
-                    tools:srcCompat="@drawable/ic_launcher_background" />
+                    tools:srcCompat="@tools:sample/avatars[0]" />
 
                 <ImageView
                     android:id="@+id/staff_image"
@@ -150,7 +157,7 @@
                     android:layout_height="70dp"
                     android:rotation="-45"
                     android:translationX="80dp"
-                    android:translationY="30dp"
+                    android:translationY="40dp"
                     tools:srcCompat="@drawable/ic_launcher_background" />
 
                 <ImageView
@@ -159,8 +166,9 @@
                     android:layout_height="70dp"
 
                     android:background="@android:color/transparent"
-                    android:translationX="130dp"
+                    android:translationX="122dp"
                     tools:srcCompat="@drawable/ic_launcher_background" />
+
             </FrameLayout>
 
         </LinearLayout>
