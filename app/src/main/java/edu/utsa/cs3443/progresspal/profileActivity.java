@@ -12,10 +12,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.progresspal.model.Mascot;
 import edu.utsa.cs3443.progresspal.model.Stats;
+import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 public class profileActivity extends AppCompatActivity {
 
+    private static TaskTracker taskTracker;
 
     @Override
     protected void onRestart() {
@@ -40,6 +43,13 @@ public class profileActivity extends AppCompatActivity {
         ImageView mascotImageView = findViewById(R.id.mascot);
         ImageView hatImageView = findViewById(R.id.hat);
         ImageView staffImageView = findViewById(R.id.staff);
+
+        TextView mascotNameText = findViewById(R.id.mascotName);
+        //String mascotNewName = getIntent().getStringExtra(profileCustomizationActivity.decodeMascotName());
+
+        taskTracker = homeActivity.getTaskTracker();
+
+        mascotNameText.setText(taskTracker.initializeName());
 
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
