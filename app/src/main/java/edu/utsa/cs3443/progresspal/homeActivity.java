@@ -113,23 +113,33 @@ public class homeActivity extends AppCompatActivity {
         mascotQuoteButton.setOnClickListener(new View.OnClickListener() {
             int i = 0;
             MediaPlayer mediaPlayer = null;
+
             @Override
             public void onClick(View view) {
-                if (mediaPlayer != null) {
-                    mediaPlayer.release();
+                // Get SFX preference
+                SharedPreferences preferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+                boolean isSfxEnabled = preferences.getBoolean("sfx_enabled", true);
+
+                // Play sound only if SFX is enabled
+                if (isSfxEnabled) {
+                    if (mediaPlayer != null) {
+                        mediaPlayer.release();
+                    }
+
+                    mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.squeak);
+                    mediaPlayer.setVolume(1.0f, 1.0f);
+                    mediaPlayer.start();
                 }
 
-                mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.squeak);
-                mediaPlayer.setVolume(1.0f, 1.0f);
-                mediaPlayer.start();
-
-                if(i == quoteHandler.getQuotes().size()){
+                // Update quote regardless of SFX preference
+                if (i == quoteHandler.getQuotes().size()) {
                     i = 0;
                 }
                 mascotQuoteText.setText(quoteHandler.getQuote(i).getText());
                 i++;
             }
         });
+
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,9 +34,13 @@ public class creditsActivity extends AppCompatActivity {
 
         // Music Switch
         musicSwitch = findViewById(R.id.music_switch);
+        Switch sfxSwitch = findViewById(R.id.sfx_switch);
+
         SharedPreferences preferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
         boolean isMusicEnabled = preferences.getBoolean("music_enabled", true);
+        boolean isSfxEnabled = preferences.getBoolean("sfx_enabled", true);
         musicSwitch.setChecked(isMusicEnabled); // Set initial state of the switch
+        sfxSwitch.setChecked(isSfxEnabled);
 
         musicSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = preferences.edit();
@@ -48,6 +52,11 @@ public class creditsActivity extends AppCompatActivity {
             } else {
                 MediaPlayerManager.pause(); // Pause music if disabled
             }
+        });
+        sfxSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("sfx_enabled", isChecked);
+            editor.apply();
         });
 
         // GitHub button listeners
