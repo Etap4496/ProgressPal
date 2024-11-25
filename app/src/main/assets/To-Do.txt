@@ -14,4 +14,3 @@ Goal
 
 Optional
 -Sound on everything
--add music in background
