@@ -121,7 +121,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (100)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -134,7 +134,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (200)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -147,7 +147,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (400)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -160,7 +160,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (500)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -173,7 +173,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (700)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -186,7 +186,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (800)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -201,7 +201,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (300)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -214,7 +214,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (600)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -227,7 +227,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                     Toast.makeText(view.getContext(), "Item Selected", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(view.getContext(), "Insufficient amount of XP (900)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Insufficient amount of XP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
