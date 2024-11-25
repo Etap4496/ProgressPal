@@ -9,7 +9,6 @@ Critical
 Goal
 -Amount of XP till next unlock
 -Rounded nav bar, darker icon to show selected
--Login/account system
 
 
 Optional
