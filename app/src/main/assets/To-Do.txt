@@ -4,7 +4,6 @@ To-DO
 Critical
 -Colors on mascot (keep selection)
 -Blank/No hat staff option
--README File
 
 Goal
 -Amount of XP till next unlock
