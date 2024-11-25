@@ -7,7 +7,7 @@ Critical
 
 Goal
 -Amount of XP till next unlock
--Rounded nav bar, darker icon to show selected
+-Rounded nav bar
 
 
 Optional
