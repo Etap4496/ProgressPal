@@ -32,6 +32,8 @@ public class profileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        MediaPlayerManager.start(this);
+
         // Retrieve saved selections from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
         int mascotImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard); // Default to red lizard
@@ -138,6 +140,26 @@ public class profileActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    protected void onPause() {
+        super.onPause();
+        // Pause the music when the activity is not visible
+        MediaPlayerManager.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Resume the music when the activity becomes visible
+        MediaPlayerManager.start(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Optionally release the MediaPlayer when the app is closed entirely
+        // MediaPlayerManager.release();
     }
 
     private void loadMostTasksCompleted(Stats stats) {

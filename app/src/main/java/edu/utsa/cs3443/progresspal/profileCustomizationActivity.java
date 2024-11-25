@@ -33,6 +33,8 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_customization);
 
+        MediaPlayerManager.start(this);
+
         // Load previous selections from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
         ImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard);
@@ -231,6 +233,25 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         });
     }
 
+    protected void onPause() {
+        super.onPause();
+        // Pause the music when the activity is not visible
+        MediaPlayerManager.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Resume the music when the activity becomes visible
+        MediaPlayerManager.start(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Optionally release the MediaPlayer when the app is closed entirely
+        // MediaPlayerManager.release();
+    }
 
     private void launchBack(){
         Intent intentBack = new Intent(this, profileActivity.class);

@@ -19,6 +19,8 @@ public class newTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_task);
 
+        MediaPlayerManager.start(this);
+
         Button cancelButton = findViewById(R.id.cancel_button);
         Button createButton = findViewById(R.id.create_button);
         EditText taskName = findViewById(R.id.enter_task_name);
@@ -60,6 +62,26 @@ public class newTaskActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    protected void onPause() {
+        super.onPause();
+        // Pause the music when the activity is not visible
+        MediaPlayerManager.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Resume the music when the activity becomes visible
+        MediaPlayerManager.start(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Optionally release the MediaPlayer when the app is closed entirely
+        // MediaPlayerManager.release();
     }
 
     private void launchCancel() {

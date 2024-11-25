@@ -22,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import edu.utsa.cs3443.progresspal.model.QuoteHandler;
 import edu.utsa.cs3443.progresspal.model.Stats;
@@ -34,10 +33,15 @@ public class homeActivity extends AppCompatActivity {
     private QuoteHandler quoteHandler;
     private static TaskTracker taskTracker;
     private static Stats stats;
+    private MediaPlayer mediaPlayer; // Declare MediaPlayer as a class variable
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // Initialize MediaPlayer and play music
+        MediaPlayerManager.start(this);
 
         // Retrieve saved selections from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
@@ -54,13 +58,6 @@ public class homeActivity extends AppCompatActivity {
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
 
-
-        /*if (noHat != -2){
-            hatImageView.setImageDrawable(null);
-        }
-        if (noStaff != -2){
-            staffImageView.setImageDrawable(null);
-        }*/
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
             hatImageView.setImageResource(hatImageResID);
@@ -101,14 +98,6 @@ public class homeActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
-        /*if (profileCustomizationActivity.noHatImageResID != -2) {
-            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
-            hatView.setImageDrawable(null);
-        }
-        if (profileCustomizationActivity.noStaffImageResID != -2) {
-            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
-            staffView.setImageDrawable(null);
-        }*/
 
         ImageButton mascotQuoteButton = findViewById(R.id.mascot_quote_button);
         TextView mascotQuoteText = findViewById(R.id.mascot_quote);
@@ -164,7 +153,26 @@ public class homeActivity extends AppCompatActivity {
         });
 
         newTaskDynamicSetup(taskTracker.getTasks());
+    }
 
+    protected void onPause() {
+        super.onPause();
+        // Pause the music when the activity is not visible
+        MediaPlayerManager.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Resume the music when the activity becomes visible
+        MediaPlayerManager.start(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Optionally release the MediaPlayer when the app is closed entirely
+        // MediaPlayerManager.release();
     }
 
     public static TaskTracker getTaskTracker(){
