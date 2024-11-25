@@ -7,6 +7,8 @@
   The language used to write this app is Java
 ## Screenshots of how the app looks
   [Adobe XD of the App](https://xd.adobe.com/view/bbeae482-0e6c-4fc8-9407-9e29133aa716-eeb9/)
+## A Video Demonstration of the App
+  [Project Demo](https://drive.google.com/file/d/1DNMQ9E8FhB0Jqn4SM699c-VBLvl7Gn1f/view?usp=drive_link)
 ## Tech Used
   We used **Android Studio** to code the app, **Instagram** to communicate with each other, and **GitHub** for version control. **Adobe XD** was used for the initial design of the app, and **Google Docs** was where we uploaded and kept many of the assets used in the app.
 # Here is some code to show the main functionality of the app
