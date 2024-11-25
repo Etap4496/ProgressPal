@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.progresspal;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 
 public class MediaPlayerManager {
@@ -17,8 +18,12 @@ public class MediaPlayerManager {
     }
 
     public static void start(Context context) {
+        // Check shared preferences for music state
+        SharedPreferences preferences = context.getSharedPreferences("AppSettings", Context.MODE_PRIVATE);
+        boolean isMusicEnabled = preferences.getBoolean("music_enabled", true);
+
         MediaPlayer player = getInstance(context);
-        if (!player.isPlaying()) {
+        if (isMusicEnabled && !player.isPlaying()) {
             player.start();
         }
     }

@@ -1,19 +1,19 @@
 package edu.utsa.cs3443.progresspal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Switch;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class creditsActivity extends AppCompatActivity {
+
+    private Switch musicSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class creditsActivity extends AppCompatActivity {
 
         MediaPlayerManager.start(this);
 
+        // Navigation buttons
         ImageButton profileButton = findViewById(R.id.profile_button);
         ImageButton pointButton = findViewById(R.id.points_button);
-        ImageButton creditButton = findViewById(R.id.credits_button);
         ImageButton homeButton = findViewById(R.id.home_button);
 
         Button mathewGithub = findViewById(R.id.mathew_github);
@@ -32,67 +32,56 @@ public class creditsActivity extends AppCompatActivity {
         Button eliGithub = findViewById(R.id.eli_github);
         Button leslieGithub = findViewById(R.id.leslie_github);
 
+        // Music Switch
+        musicSwitch = findViewById(R.id.music_switch);
+        SharedPreferences preferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        boolean isMusicEnabled = preferences.getBoolean("music_enabled", true);
+        musicSwitch.setChecked(isMusicEnabled); // Set initial state of the switch
 
-        mathewGithub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        musicSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("music_enabled", isChecked);
+            editor.apply();
 
-                Intent viewIntent = new Intent("android.intent.action.VIEW",
-                        Uri.parse("https://github.com/mattyb8591"));
-                startActivity(viewIntent);
+            if (isChecked) {
+                MediaPlayerManager.start(this); // Start music if enabled
+            } else {
+                MediaPlayerManager.pause(); // Pause music if disabled
             }
         });
 
-        marcGithub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent viewIntent = new Intent("android.intent.action.VIEW",
-                        Uri.parse("https://github.com/marcdjbn"));
-                startActivity(viewIntent);
-            }
+        // GitHub button listeners
+        mathewGithub.setOnClickListener(view -> {
+            Intent viewIntent = new Intent("android.intent.action.VIEW",
+                    Uri.parse("https://github.com/mattyb8591"));
+            startActivity(viewIntent);
         });
 
-        eliGithub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent viewIntent = new Intent("android.intent.action.VIEW",
-                        Uri.parse("https://github.com/Etap4496"));
-                startActivity(viewIntent);
-            }
+        marcGithub.setOnClickListener(view -> {
+            Intent viewIntent = new Intent("android.intent.action.VIEW",
+                    Uri.parse("https://github.com/marcdjbn"));
+            startActivity(viewIntent);
         });
 
-        leslieGithub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent viewIntent = new Intent("android.intent.action.VIEW",
-                        Uri.parse("https://github.com/LeslieH0"));
-                startActivity(viewIntent);
-            }
+        eliGithub.setOnClickListener(view -> {
+            Intent viewIntent = new Intent("android.intent.action.VIEW",
+                    Uri.parse("https://github.com/Etap4496"));
+            startActivity(viewIntent);
         });
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchHome();
-            }
+        leslieGithub.setOnClickListener(view -> {
+            Intent viewIntent = new Intent("android.intent.action.VIEW",
+                    Uri.parse("https://github.com/LeslieH0"));
+            startActivity(viewIntent);
         });
 
-        pointButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchPoint();
-            }
-        });
-
-        profileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchProfile();
-            }
-        });
-
+        // Navigation listeners
+        homeButton.setOnClickListener(view -> launchHome());
+        pointButton.setOnClickListener(view -> launchPoint());
+        profileButton.setOnClickListener(view -> launchProfile());
     }
 
+    @Override
     protected void onPause() {
         super.onPause();
         // Pause the music when the activity is not visible
@@ -102,26 +91,21 @@ public class creditsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Resume the music when the activity becomes visible
+        // Resume the music if enabled
         MediaPlayerManager.start(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Optionally release the MediaPlayer when the app is closed entirely
-        // MediaPlayerManager.release();
-    }
-
-    private void launchPoint(){
+    private void launchPoint() {
         Intent intentPoint = new Intent(this, pointsActivity.class);
         startActivity(intentPoint);
     }
-    private void launchProfile(){
+
+    private void launchProfile() {
         Intent intentProfile = new Intent(this, profileActivity.class);
         startActivity(intentProfile);
     }
-    private void launchHome(){
+
+    private void launchHome() {
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);
     }

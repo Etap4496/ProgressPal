@@ -142,24 +142,16 @@ public class profileActivity extends AppCompatActivity {
 
     }
 
+    @Override
     protected void onPause() {
         super.onPause();
-        // Pause the music when the activity is not visible
-        MediaPlayerManager.pause();
+        MediaPlayerManager.pause(); // Pause the music
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Resume the music when the activity becomes visible
-        MediaPlayerManager.start(this);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Optionally release the MediaPlayer when the app is closed entirely
-        // MediaPlayerManager.release();
+        MediaPlayerManager.start(this); // Resume music based on preferences
     }
 
     private void loadMostTasksCompleted(Stats stats) {
