@@ -9,6 +9,22 @@
     android:backgroundTint="#D7F1F4"
     tools:context=".profileCustomizationActivity">
 
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0 XP"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0 XP"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="0dp"
@@ -90,14 +106,14 @@
 
         <LinearLayout
             android:layout_width="375dp"
-            android:layout_height="350dp"
+            android:layout_height="450dp"
             android:background="@color/light_primary"
             android:gravity="center|top"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="150dp"
-                android:layout_height="350dp"
+                android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:orientation="vertical">
 
@@ -134,12 +150,28 @@
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@android:drawable/ic_delete" />
 
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
+
                             <ImageButton
                                 android:id="@+id/blue_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/blue_hat" />
+
+                            <TextView
+                                android:id="@+id/textView28"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="1000 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
 
                             <ImageButton
                                 android:id="@+id/green_blue_hat"
@@ -148,12 +180,28 @@
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/green_blue_hat" />
 
+                            <TextView
+                                android:id="@+id/textView29"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2500 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
+
                             <ImageButton
                                 android:id="@+id/red_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/red_hat" />
+
+                            <TextView
+                                android:id="@+id/textView30"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4000 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -169,6 +217,14 @@
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/black_hat" />
 
+                            <TextView
+                                android:id="@+id/textView31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="500 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
+
                             <ImageButton
                                 android:id="@+id/green_hat"
                                 android:layout_width="70dp"
@@ -176,12 +232,28 @@
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/green_hat" />
 
+                            <TextView
+                                android:id="@+id/textView34"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2000 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
+
                             <ImageButton
                                 android:id="@+id/purple_hat"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:backgroundTint="#84DAFB"
                                 app:srcCompat="@drawable/purple_hat" />
+
+                            <TextView
+                                android:id="@+id/textView35"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="3500 XP"
+                                android:textAlignment="center"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -195,7 +267,7 @@
 
             <LinearLayout
                 android:layout_width="150dp"
-                android:layout_height="350dp"
+                android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:orientation="vertical">
 
@@ -227,12 +299,28 @@
                             android:backgroundTint="#84DAFB"
                             app:srcCompat="@android:drawable/ic_delete" />
 
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0 XP"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
                         <ImageButton
                             android:id="@+id/purple_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/purple_staff" />
+
+                        <TextView
+                            android:id="@+id/textView38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3000 XP"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -249,12 +337,28 @@
                             android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/green_staff" />
 
+                        <TextView
+                            android:id="@+id/textView37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1500 XP"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
                         <ImageButton
                             android:id="@+id/red_staff"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:backgroundTint="#84DAFB"
                             app:srcCompat="@drawable/red_staff" />
+
+                        <TextView
+                            android:id="@+id/textView39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="4500 XP"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </LinearLayout>
