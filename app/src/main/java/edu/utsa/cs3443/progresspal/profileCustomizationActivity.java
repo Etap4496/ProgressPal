@@ -1,6 +1,5 @@
 package edu.utsa.cs3443.progresspal;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.utsa.cs3443.progresspal.model.Mascot;
+import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 

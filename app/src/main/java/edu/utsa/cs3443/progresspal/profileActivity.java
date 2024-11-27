@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.utsa.cs3443.progresspal.model.Mascot;
+import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 

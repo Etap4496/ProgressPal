@@ -8,8 +8,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Stats;
-import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 

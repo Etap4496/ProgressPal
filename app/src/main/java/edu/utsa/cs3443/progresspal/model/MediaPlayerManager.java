@@ -1,8 +1,10 @@
-package edu.utsa.cs3443.progresspal;
+package edu.utsa.cs3443.progresspal.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+
+import edu.utsa.cs3443.progresspal.R;
 
 public class MediaPlayerManager {
     private static MediaPlayer mediaPlayer;

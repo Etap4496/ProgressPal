@@ -19,10 +19,9 @@ import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
+import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.QuoteHandler;
 import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.Task;
