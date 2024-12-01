@@ -22,9 +22,10 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     public static int ImageResID = -1;
     public static int hatImageResID = -1;
     public static int staffImageResID = -1;
+    public static int spinnerSelectionID = -1;
     public static int noHatImageResID = -2;
     public static int noStaffImageResID = -2;
-
+    private Spinner spinnerColors;
     private static TaskTracker taskTracker;
 
     @Override
@@ -37,6 +38,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         // Load previous selections from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
         ImageResID = sharedPreferences.getInt("mascotColor", R.drawable.red_lizard);
+        spinnerSelectionID = sharedPreferences.getInt("selectionInt", -1);
         hatImageResID = sharedPreferences.getInt("hat", -1);  // Default to -1 if not set
         staffImageResID = sharedPreferences.getInt("staff", -1);// Default to -1 if not set
         noHatImageResID = sharedPreferences.getInt("noHat", -2);
@@ -63,12 +65,17 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
 
         taskTracker = homeActivity.getTaskTracker();
 
-        Spinner spinnerColors = findViewById(R.id.mascot_colors);
-        spinnerColors.setOnItemSelectedListener(this);
-        String[] colors = getResources().getStringArray(R.array.mascot_colors);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, colors);
-        adapter.setDropDownViewResource(androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item);
-        spinnerColors.setAdapter(adapter);
+        if(spinnerColors == null) {
+            spinnerColors = findViewById(R.id.mascot_colors);
+            spinnerColors.setOnItemSelectedListener(this);
+            String[] colors = getResources().getStringArray(R.array.mascot_colors);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, colors);
+            adapter.setDropDownViewResource(androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item);
+            spinnerColors.setAdapter(adapter);
+        }
+
+            int selectedPosition = sharedPreferences.getInt("selectionInt", 0); // Default to 0 if not found
+            spinnerColors.setSelection(selectedPosition);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,6 +249,7 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     protected void onResume() {
         super.onResume();
         MediaPlayerManager.start(this); // Resume music based on preferences
+
     }
 
     private void launchBack(){
@@ -267,10 +275,13 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
                 break;
         }
         saveSelection("mascotColor", ImageResID);
+        saveSelection("selectionInt", i);
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 
     // Method to save selections to SharedPreferences
@@ -280,4 +291,6 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         editor.putInt(key, resID);
         editor.apply();
     }
+
+
 }
