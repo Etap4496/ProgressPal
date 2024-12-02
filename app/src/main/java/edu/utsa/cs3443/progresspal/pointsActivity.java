@@ -142,7 +142,7 @@ public class pointsActivity extends AppCompatActivity {
 
     private void loadxpNeeded(Stats stats) {
         TextView textXPNeeded = findViewById(R.id.xpNeeded);
-        textXPNeeded.setText(String.valueOf((stats.getTotalXP() - (stats.getTotalXP()%200))+200));
+        textXPNeeded.setText(String.valueOf((stats.getTotalXP() - (stats.getTotalXP()%500))+500));
     }
 
     private void launchProfile(){
