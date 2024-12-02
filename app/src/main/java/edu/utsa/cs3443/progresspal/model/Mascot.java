@@ -6,14 +6,12 @@ public class Mascot {
 
     private String name;
     private String DOB;
-    private Inventory inventory;
     private final String mascotFile;
     private Activity activity;
 
     public Mascot(String name, String DOB) {
         this.name = name;
         this.DOB = DOB;
-        inventory = new Inventory();
         this.activity = activity;
         this.mascotFile = "mascot.csv";
     }
@@ -38,11 +36,11 @@ public class Mascot {
         this.DOB = DOB;
     }
 
-    public Inventory getInventory() {
+    /*public Inventory getInventory() {
         return inventory;
     }
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
-    }
+    }*/
 }
