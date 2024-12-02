@@ -4,7 +4,6 @@ To-DO
 Critical
 
 Goal
--Amount of XP till next unlock
 -Rounded nav bar
 
 
