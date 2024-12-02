@@ -225,6 +225,9 @@ public class homeActivity extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
+
+                        MediaPlayerManager.playTaskCompleteSound(buttonView.getContext());
+
                         taskTracker.deleteTask(task);
                         rootLayout.removeView(horizontalLayout);
                     }

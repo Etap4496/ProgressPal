@@ -8,6 +8,7 @@ import edu.utsa.cs3443.progresspal.R;
 
 public class MediaPlayerManager {
     private static MediaPlayer mediaPlayer;
+    private static MediaPlayer taskCompletePlayer;
     private static boolean isInitialized = false;
 
     public static MediaPlayer getInstance(Context context) {
@@ -42,9 +43,35 @@ public class MediaPlayerManager {
             mediaPlayer = null;
             isInitialized = false;
         }
+        if (taskCompletePlayer != null) {
+            taskCompletePlayer.release();
+            taskCompletePlayer = null;
+        }
     }
 
     public static boolean isInitialized() {
         return isInitialized;
+    }
+
+    public static void playTaskCompleteSound(Context context) {
+        // Check shared preferences for SFX state
+        SharedPreferences preferences = context.getSharedPreferences("AppSettings", Context.MODE_PRIVATE);
+        boolean isSfxEnabled = preferences.getBoolean("sfx_enabled", true);
+
+        if (isSfxEnabled) {
+            if (taskCompletePlayer == null) {
+                taskCompletePlayer = MediaPlayer.create(context, R.raw.taskcomplete);
+            } else {
+                taskCompletePlayer.reset();
+                taskCompletePlayer = MediaPlayer.create(context, R.raw.taskcomplete);
+            }
+
+            taskCompletePlayer.setOnCompletionListener(mp -> {
+                mp.release();
+                taskCompletePlayer = null; // Release resources after completion
+            });
+
+            taskCompletePlayer.start();
+        }
     }
 }
