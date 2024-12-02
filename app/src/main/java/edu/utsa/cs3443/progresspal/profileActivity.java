@@ -156,7 +156,9 @@ public class profileActivity extends AppCompatActivity {
 
     private void loadMostTasksCompleted(Stats stats) {
         TextView lifeTimeTasks = findViewById(R.id.tasksaccomp);
+        TextView mostTasksAccomp = findViewById(R.id.mostTaskAccomp);
         lifeTimeTasks.setText(String.valueOf(stats.getTasksCompleted()));
+        mostTasksAccomp.setText(String.valueOf(stats.getTasksCompleted()));
     }
 
     private void launchPoint(){
