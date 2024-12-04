@@ -104,8 +104,6 @@ public class TaskTracker {
     public ArrayList<Task> getTasks(){
         return tasks;
     }
-
-
 //tallies up the total xp, called from pointsActivity
     public int getTotalXp() {
         int totalXp = 0;
@@ -115,6 +113,7 @@ public class TaskTracker {
         return totalXp;
     }
 }
+
 
 ## Known Issues
   We could not synchronize a calendar with the tasks and their dates
