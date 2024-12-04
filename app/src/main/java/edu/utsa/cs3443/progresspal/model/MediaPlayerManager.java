@@ -5,12 +5,23 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 
 import edu.utsa.cs3443.progresspal.R;
-
+/**
+ * The MediaPlayerManager controls the music playing in the app
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
+ */
 public class MediaPlayerManager {
     private static MediaPlayer mediaPlayer;
     private static MediaPlayer taskCompletePlayer;
     private static boolean isInitialized = false;
 
+    /**
+     * Media Player plays the music in a loop
+     * @param context, the context passed to the media player (Context)
+     * @return MediaPlayer, the media player playing the music
+     */
     public static MediaPlayer getInstance(Context context) {
         if (mediaPlayer == null) {
             mediaPlayer = MediaPlayer.create(context, R.raw.bgmusic);
@@ -20,6 +31,10 @@ public class MediaPlayerManager {
         return mediaPlayer;
     }
 
+    /**
+     * starts the music
+     * @param context, the context passed to the shared preferences (Context)
+     */
     public static void start(Context context) {
         // Check shared preferences for music state
         SharedPreferences preferences = context.getSharedPreferences("AppSettings", Context.MODE_PRIVATE);
@@ -31,28 +46,19 @@ public class MediaPlayerManager {
         }
     }
 
+    /**
+     * pauses the music
+     */
     public static void pause() {
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
         }
     }
 
-    public static void release() {
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-            isInitialized = false;
-        }
-        if (taskCompletePlayer != null) {
-            taskCompletePlayer.release();
-            taskCompletePlayer = null;
-        }
-    }
-
-    public static boolean isInitialized() {
-        return isInitialized;
-    }
-
+    /**
+     * plays a trumpet sound when a task is completed
+     * @param context, the context passed to the shared preferences (Context)
+     */
     public static void playTaskCompleteSound(Context context) {
         // Check shared preferences for SFX state
         SharedPreferences preferences = context.getSharedPreferences("AppSettings", Context.MODE_PRIVATE);
