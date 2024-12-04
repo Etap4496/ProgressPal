@@ -221,7 +221,7 @@ public class TaskTracker {
      * Gets the total xp from
      * @return returns the total xp
      */
-//tallies up the total xp, called from pointsActivity
+    //tallies up the total xp, called from pointsActivity
     public int getTotalXp() {
         int totalXp = 0;
         for (Task task : tasks) {
