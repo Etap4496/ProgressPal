@@ -115,6 +115,7 @@ public class TaskTracker {
         return totalXp;
     }
 }
+
 ## Known Issues
   We could not synchronize a calendar with the tasks and their dates
 ## Installation
