@@ -18,6 +18,10 @@ import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
+/**
+ * This class represents the profile customization page of
+ * the application where you can customize the mascot
+ */
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;
     public static int hatImageResID = -1;
@@ -28,6 +32,11 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
     private Spinner spinnerColors;
     private static TaskTracker taskTracker;
 
+    /**
+     * Inflates the xml page associated, handles user clicks/Input,
+     * and changes views in other activities
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -237,12 +246,18 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
         });
     }
 
+    /**
+     * onPause the music pauses
+     */
     @Override
     protected void onPause() {
         super.onPause();
         MediaPlayerManager.pause(); // Pause the music
     }
 
+    /**
+     * onResume the music plays from where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -250,11 +265,21 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
 
     }
 
+    /**
+     * Launches the user back to the profile page through an intent
+     */
     private void launchBack(){
         Intent intentBack = new Intent(this, profileActivity.class);
         startActivity(intentBack);
     }
 
+    /**
+     * Sets the color of the lizard from the spinner object and saves the selection
+     * @param adapterView adapter for the spinner object
+     * @param view view from the spinner
+     * @param i index of the color in the spinner
+     * @param l index
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         // Set and save mascot color based on selection
@@ -277,12 +302,20 @@ public class profileCustomizationActivity extends AppCompatActivity implements A
 
     }
 
+    /**
+     * When nothing is selected from the spinner
+     * @param adapterView adapter connected to the spinner object
+     */
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 
-    // Method to save selections to SharedPreferences
+    /**
+     * Saves the selection to shared preferences
+     * @param key string the is associated with the shared preferences object
+     * @param resID ID of the selection made
+     */
     private void saveSelection(String key, int resID) {
         SharedPreferences sharedPreferences = getSharedPreferences("MascotPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

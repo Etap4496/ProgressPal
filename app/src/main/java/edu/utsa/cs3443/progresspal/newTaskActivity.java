@@ -13,8 +13,17 @@ import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Task;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
+/**
+ * This class represents the new task page of the application
+ * where you create a new task and add it to the array list of tasks
+ */
 public class newTaskActivity extends AppCompatActivity {
 
+    /**
+     * Inflates the xml page associated, handles user clicks/Input,
+     * and uses model class functions to save/update data
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,23 +74,35 @@ public class newTaskActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * onPause the music pauses
+     */
     @Override
     protected void onPause() {
         super.onPause();
         MediaPlayerManager.pause(); // Pause the music
     }
 
+    /**
+     * onResume the music resumes from where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
         MediaPlayerManager.start(this); // Resume music based on preferences
     }
 
+    /**
+     * Launches the user back to the home page without creating a new task
+     */
     private void launchCancel() {
         Intent intentCancel = new Intent(this, homeActivity.class);
         startActivity(intentCancel);
     }
 
+    /**
+     * Launches the user back to the home page after creating a new task and saving the data
+     */
     private void launchCreateTask() {
         Intent intentCreate = new Intent(this, homeActivity.class);
         startActivity(intentCreate);

@@ -13,8 +13,19 @@ import edu.utsa.cs3443.progresspal.model.Stats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * This class represents the points page for the application
+ * displays the total xp, tasks completed,
+ * xp needed for the next reward,
+ * and displaying the current mascot
+ */
 public class pointsActivity extends AppCompatActivity {
 
+    /**
+     * Inflates the xml associated with this class, updates data using model class functions,
+     * and displays the current mascot
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +55,6 @@ public class pointsActivity extends AppCompatActivity {
 
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
-
-        /*if (noHat != -2){
-            hatImageView.setImageDrawable(null);
-        }
-        if (noStaff != -2){
-            staffImageView.setImageDrawable(null);
-        }*/
 
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
@@ -85,14 +89,6 @@ public class pointsActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
-        /*if (profileCustomizationActivity.noHatImageResID != -2) {
-            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
-            hatView.setImageDrawable(null);
-        }
-        if (profileCustomizationActivity.noStaffImageResID != -2) {
-            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
-            staffView.setImageDrawable(null);
-        }*/
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,41 +114,68 @@ public class pointsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * onPayse the music pauses
+     */
     @Override
     protected void onPause() {
         super.onPause();
-        MediaPlayerManager.pause(); // Pause the music
+        MediaPlayerManager.pause();
     }
 
+    /**
+     * onResume the music plays from where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
-        MediaPlayerManager.start(this); // Resume music based on preferences
+        MediaPlayerManager.start(this);
     }
 
+    /**
+     * Displays the total xp the user has gained
+     * @param stats Stats object
+     */
     private void loadXP(Stats stats){
         TextView textXP = findViewById(R.id.pointsTotalXP);
         textXP.setText(String.valueOf(stats.getTotalXP()));
     }
 
+    /**
+     * Displays the life time tasks completed
+     * @param stats Stats object
+     */
     private void loadMostTasksCompleted(Stats stats) {
         TextView lifeTimeTasks = findViewById(R.id.lifetime_tasks);
         lifeTimeTasks.setText(String.valueOf(stats.getTasksCompleted()));
     }
 
+    /**
+     * Displays the xp needed for the new reward
+     * @param stats Stats object
+     */
     private void loadxpNeeded(Stats stats) {
         TextView textXPNeeded = findViewById(R.id.xpNeeded);
         textXPNeeded.setText(String.valueOf((stats.getTotalXP() - (stats.getTotalXP()%500))+500));
     }
 
+    /**
+     * Launches the user to the profile page through an intent
+     */
     private void launchProfile(){
         Intent intentProfile = new Intent(this, profileActivity.class);
         startActivity(intentProfile);
     }
+    /**
+     * Launches the user to the credits page through an intent
+     */
     private void launchCredit(){
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
     }
+    /**
+     * Launches the user to the home page through an intent
+     */
     private void launchHome(){
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);

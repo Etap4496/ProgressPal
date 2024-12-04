@@ -12,10 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 
+/**
+ * This class represents the settings/credits page of the
+ * application where you can change specific settings for the
+ * application and see the developers involved in the creation of the app
+ */
 public class creditsActivity extends AppCompatActivity {
 
     private Switch musicSwitch;
 
+    /**
+     * Inflates the xml page associated and handles user clicks for the settings
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +100,9 @@ public class creditsActivity extends AppCompatActivity {
         profileButton.setOnClickListener(view -> launchProfile());
     }
 
+    /**
+     * onPause the music pauses
+     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -98,6 +110,9 @@ public class creditsActivity extends AppCompatActivity {
         MediaPlayerManager.pause();
     }
 
+    /**
+     * onResume the music plays where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -105,16 +120,25 @@ public class creditsActivity extends AppCompatActivity {
         MediaPlayerManager.start(this);
     }
 
+    /**
+     * Launches the user to the points page through an intent
+     */
     private void launchPoint() {
         Intent intentPoint = new Intent(this, pointsActivity.class);
         startActivity(intentPoint);
     }
 
+    /**
+     * Launches the user to the profile page through an intent
+     */
     private void launchProfile() {
         Intent intentProfile = new Intent(this, profileActivity.class);
         startActivity(intentProfile);
     }
 
+    /**
+     * Launches the user to the home page through an intent
+     */
     private void launchHome() {
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);

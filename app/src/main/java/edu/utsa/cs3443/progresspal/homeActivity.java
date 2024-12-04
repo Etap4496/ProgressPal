@@ -27,6 +27,10 @@ import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.Task;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
+/**
+ * This class represents the home activity for the application which
+ * displays all of the tasks, shows the mascot, and allows the user to travel between pages
+ */
 public class homeActivity extends AppCompatActivity {
 
     private QuoteHandler quoteHandler;
@@ -34,6 +38,10 @@ public class homeActivity extends AppCompatActivity {
     private static Stats stats;
     private MediaPlayer mediaPlayer; // Declare MediaPlayer as a class variable
 
+    /**
+     * Inflates the xml associated with homeActivity, handles user clicks,
+     * and updates data using model class functions
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,39 +179,67 @@ public class homeActivity extends AppCompatActivity {
         newTaskDynamicSetup(taskTracker.getTasks());
     }
 
+    /**
+     * onPause the music pauses
+     */
     @Override
     protected void onPause() {
         super.onPause();
         MediaPlayerManager.pause(); // Pause the music
     }
 
+    /**
+     * onResume the music plays from where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
         MediaPlayerManager.start(this); // Resume music based on preferences
     }
 
+    /**
+     * Gets the TaskTracker object from the homeActivity
+     * @return returns the TaskTracker object from the homeActivity
+     */
     public static TaskTracker getTaskTracker(){
         return taskTracker;
     }
 
+    /**
+     * Gets the Stats object from the homeActivity
+     * @return returns the Stats object from the homeActivity
+     */
     public static Stats getStats() {
         return stats;
     }
 
+    /**
+     * Initializes the QuoteHandler object
+     */
     private void initQuotes(){
         quoteHandler = new QuoteHandler();
         quoteHandler.loadQuotes(this);
     }
 
+    /**
+     * initializes the TaskTracker object
+     */
     private void initTaskTracker(){
         taskTracker = new TaskTracker(this, stats);
     }
 
+    /**
+     * initializes the stats object
+     */
     private void initStats(){
         stats = new Stats(this);
     }
 
+    /**
+     * Dynamically loads the tasks on the scroll view as well as removing
+     * the tasks if they are completed which updates the csv file
+     * @param tasks ArrayList of task objects
+     */
     private void newTaskDynamicSetup(ArrayList<Task> tasks){
         LinearLayout rootLayout = findViewById(R.id.tasks_root_LL);
 
@@ -313,21 +349,35 @@ public class homeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Launches the user to the profile page through an intent
+     */
     private void launchProfile(){
         Intent intentProfile = new Intent(this, profileActivity.class);
         startActivity(intentProfile);
     }
+
+    /**
+     * Launches the user to the points page through an intent
+     */
     private void launchPoint(){
         Intent intentPoint = new Intent(this, pointsActivity.class);
         startActivity(intentPoint);
     }
+
+    /**
+     * Launches the user to the credits page through an intent
+     */
     private void launchCredit(){
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
     }
+
+    /**
+     * Launches the user to the home page through an intent
+     */
     private void launchNewTask(){
         Intent intentTask = new Intent(this, newTaskActivity.class);
         startActivity(intentTask);
     }
-
 }

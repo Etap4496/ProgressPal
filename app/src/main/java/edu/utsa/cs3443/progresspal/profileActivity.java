@@ -16,6 +16,10 @@ import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
 import edu.utsa.cs3443.progresspal.model.Stats;
 import edu.utsa.cs3443.progresspal.model.TaskTracker;
 
+/**
+ * This class represents the profile page activity of
+ * the application where you can see the statistics and profile of the mascot
+ */
 public class profileActivity extends AppCompatActivity {
 
     private static TaskTracker taskTracker;
@@ -23,10 +27,13 @@ public class profileActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-
-        Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * Inflates the xml page associated, handles user clicks, and displays data updated from
+     * model classes
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,12 +63,6 @@ public class profileActivity extends AppCompatActivity {
         // Set the mascot image
         mascotImageView.setImageResource(mascotImageResID);
 
-        /*if (noHat != -2){
-            hatImageView.setImageDrawable(null);
-        }
-        if (noStaff != -2){
-            staffImageView.setImageDrawable(null);
-        } */
 
         // Set the hat image if a hat is selected
         if (hatImageResID != -1) {
@@ -102,14 +103,6 @@ public class profileActivity extends AppCompatActivity {
         if (profileCustomizationActivity.staffImageResID != -1) {
             staffView.setImageResource(profileCustomizationActivity.staffImageResID);
         }
-        /*if (profileCustomizationActivity.noHatImageResID != -2) {
-            hatView.setImageResource(profileCustomizationActivity.noHatImageResID);
-            hatView.setImageDrawable(null);
-        }
-        if (profileCustomizationActivity.noStaffImageResID != -2) {
-            staffView.setImageResource(profileCustomizationActivity.noStaffImageResID);
-            staffView.setImageDrawable(null);
-        } */
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,18 +135,29 @@ public class profileActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * onPause the music will pause in the current activity
+     */
     @Override
     protected void onPause() {
         super.onPause();
         MediaPlayerManager.pause(); // Pause the music
     }
 
+    /**
+     * onResume the music will play in the current activity from where it left off
+     */
     @Override
     protected void onResume() {
         super.onResume();
         MediaPlayerManager.start(this); // Resume music based on preferences
     }
 
+    /**
+     * Loads the most tasks completed and lifeTimeTasks on the Text views grabbing the data from the
+     * stats object that is passed in
+     * @param stats Stats object
+     */
     private void loadMostTasksCompleted(Stats stats) {
         TextView lifeTimeTasks = findViewById(R.id.tasksaccomp);
         TextView mostTasksAccomp = findViewById(R.id.mostTaskAccomp);
@@ -161,18 +165,33 @@ public class profileActivity extends AppCompatActivity {
         mostTasksAccomp.setText(String.valueOf(stats.getTasksCompleted()));
     }
 
+    /**
+     * Launches the user to the points page through an intent
+     */
     private void launchPoint(){
         Intent intentPoint = new Intent(this, pointsActivity.class);
         startActivity(intentPoint);
     }
+
+    /**
+     * Launches the user to the credits page through an intent
+     */
     private void launchCredit(){
         Intent intentCredit = new Intent(this, creditsActivity.class);
         startActivity(intentCredit);
     }
+
+    /**
+     * Launches the user to the home page through an intent
+     */
     private void launchHome(){
         Intent intentHome = new Intent(this, homeActivity.class);
         startActivity(intentHome);
     }
+
+    /**
+     * Launches the user to the profile customization page through an intent
+     */
     private void launchProfileCustomization(){
         Intent intentCustomize = new Intent(this, profileCustomizationActivity.class);
         startActivity(intentCustomize);
