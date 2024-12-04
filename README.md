@@ -115,6 +115,8 @@ public class TaskTracker {
         return totalXp;
     }
 }
+## Known Issues
+  We could not synchronize a calendar with the tasks and their dates
 ## Installation
   The app is not available on the app store, but with a link to the GitHub repository, one should be able to run the app via Android Studio
 
