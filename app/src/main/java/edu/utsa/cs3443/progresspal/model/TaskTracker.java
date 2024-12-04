@@ -11,6 +11,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class represents the TaskTracker object which contains the ArrayList of
+ * tasks, the mascot, the stats, and it also utilizes file I/O functions to read and
+ * write sensitive data from csv files
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
+ */
 public class TaskTracker {
 
     private final ArrayList<Task> tasks;
@@ -19,6 +28,11 @@ public class TaskTracker {
     private final Stats stats;
     private Mascot mascot;
 
+    /**
+     * Constructor for the TaskTracker object
+     * @param activity Activity class
+     * @param stat Stats object
+     */
     public TaskTracker(Activity activity, Stats stat) {
         this.stats = stat;
         tasks = new ArrayList<>();
@@ -27,6 +41,9 @@ public class TaskTracker {
         this.mascot = new Mascot("", "");
     }
 
+    /**
+     * Initializes the tasks using the loadTasks method
+     */
     public void initializeTasks(){
 
         try{
@@ -50,6 +67,10 @@ public class TaskTracker {
         }
     }
 
+    /**
+     * Initializes the name of the mascot using the loadName method
+     * @return
+     */
     public String initializeName() {
         try{
             System.out.println("Attempting to read from file...");
@@ -71,6 +92,11 @@ public class TaskTracker {
         }
         return null;
     }
+
+    /**
+     *
+     * @param in InputStream to read from
+     */
     public void loadTasks(InputStream in){
 
         if(in != null){
@@ -87,6 +113,11 @@ public class TaskTracker {
         }
     }
 
+    /**
+     *
+     * @param in InputStream to read from
+     * @return returns the name of the mascot
+     */
     public String loadName(InputStream in){
 
         if(in != null){
@@ -102,6 +133,9 @@ public class TaskTracker {
         return mascot.getName();
     }
 
+    /**
+     * Updates the tasks to the csv file of tasks
+     */
     public void saveTasks() {
 
         try{
@@ -126,6 +160,10 @@ public class TaskTracker {
         }
     }
 
+    /**
+     * Saves the name of the mascot to the csv file
+     * @param name Name of mascot
+     */
     public void saveName(String name) {
 
         try{
@@ -143,10 +181,18 @@ public class TaskTracker {
         }
     }
 
+    /**
+     * Adds a task to the ArrayList of tasks
+     * @param task Task object
+     */
     public void addTasks(Task task){
         tasks.add(task);
     }
 
+    /**
+     * Deletes a task from the ArrayList and updates the csv file of tasks
+     * @param task Task object
+     */
     public void deleteTask(Task task){
         stats.setTotalXP(stats.getTotalXP() + task.getXp());
         stats.setTasksCompleted(stats.getTasksCompleted()+1);
@@ -155,14 +201,26 @@ public class TaskTracker {
         saveTasks();
     }
 
+    /**
+     * Gets the Tasks
+     * @return returns ArrayList of type Task
+     */
     public ArrayList<Task> getTasks(){
         return tasks;
     }
 
+    /**
+     * Gets the mascot
+     * @return gets the mascot
+     */
     public Mascot getMascot(){
         return mascot;
     }
 
+    /**
+     * Gets the total xp from
+     * @return returns the total xp
+     */
 //tallies up the total xp, called from pointsActivity
     public int getTotalXp() {
         int totalXp = 0;
