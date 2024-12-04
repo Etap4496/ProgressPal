@@ -16,6 +16,11 @@ import edu.utsa.cs3443.progresspal.model.MediaPlayerManager;
  * This class represents the settings/credits page of the
  * application where you can change specific settings for the
  * application and see the developers involved in the creation of the app
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class creditsActivity extends AppCompatActivity {
 

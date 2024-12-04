@@ -18,6 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
  * displays the total xp, tasks completed,
  * xp needed for the next reward,
  * and displaying the current mascot
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class pointsActivity extends AppCompatActivity {
 

@@ -30,6 +30,11 @@ import edu.utsa.cs3443.progresspal.model.TaskTracker;
 /**
  * This class represents the home activity for the application which
  * displays all of the tasks, shows the mascot, and allows the user to travel between pages
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class homeActivity extends AppCompatActivity {
 

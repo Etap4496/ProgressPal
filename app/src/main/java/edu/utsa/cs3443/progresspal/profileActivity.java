@@ -19,6 +19,11 @@ import edu.utsa.cs3443.progresspal.model.TaskTracker;
 /**
  * This class represents the profile page activity of
  * the application where you can see the statistics and profile of the mascot
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class profileActivity extends AppCompatActivity {
 

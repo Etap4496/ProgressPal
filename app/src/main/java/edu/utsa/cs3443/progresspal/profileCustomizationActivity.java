@@ -21,6 +21,11 @@ import edu.utsa.cs3443.progresspal.model.TaskTracker;
 /**
  * This class represents the profile customization page of
  * the application where you can customize the mascot
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class profileCustomizationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static int ImageResID = -1;

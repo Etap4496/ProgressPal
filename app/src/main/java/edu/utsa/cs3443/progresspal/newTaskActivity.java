@@ -16,6 +16,11 @@ import edu.utsa.cs3443.progresspal.model.TaskTracker;
 /**
  * This class represents the new task page of the application
  * where you create a new task and add it to the array list of tasks
+ *
+ * @author Eli Tapia uxb422
+ * @author Mathew Robillard gll855
+ * @author Marc Jabian ibs065
+ * @author Leslie Henley lbu591
  */
 public class newTaskActivity extends AppCompatActivity {
 
